@@ -12,4 +12,10 @@ class Event
   def attendee_names
     @attendees.map { |attendee| attendee.name }
   end
+
+  def craft_with_most_supplies
+    @crafts.max_by do |craft|
+      craft.supplies_required.length
+    end.name
+  end
 end
