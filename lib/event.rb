@@ -16,6 +16,20 @@ class Event
     attendee_name_array
   end
 
+  def craft_with_most_supplies
+    supplies_per_craft = []
+
+    @crafts.each do |craft|
+      supplies_per_craft << craft.required_supplies.keys.size
+    end
+
+    most_supplies = supplies_per_craft.max
+
+    craft_with_most_supplies = supplies_per_craft.rindex(most_supplies)
+
+    craft_name = @crafts[craft_with_most_supplies].name
+  end
+
   def supply_list
     # Get all keys from all crafts
     all_craft_supplies = @crafts.map do |craft|
