@@ -6,4 +6,8 @@ class Event
     @crafts = crafts
     @attendees = attendees
   end
+
+  def attendee_names
+    @attendees.map {|person| person.name}
+  end
 end
