@@ -17,7 +17,15 @@ class Person
     end
   end
 
-  def can_build?
+  def supplies_to_symbol
+    @supplies.transform_keys { |type| type.to_sym }
+  end
+
+  def can_build?(craft)
+    return false if @supplies.empty?
+
+    if @supplies.keys
     
+    end
   end
 end
