@@ -11,4 +11,12 @@ class Person
   def add_supply(item, quantity)
     supplies[item] += quantity
   end
+
+  #getting close on this one! Left off here
+  def can_build?(craft)
+      hash = @supplies.transform_keys do |key|
+                key.to_sym
+          end
+      hash == craft.supplies_required
+  end
 end
