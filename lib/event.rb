@@ -49,4 +49,40 @@ class Event
       craft.supplies_required.keys.include?(element.to_sym)
     end
   end
+
+  # def assign_attendees_to_crafts
+  #   assignment = {}
+  #   eligible_attendees = []
+  #   @crafts.each do |craft|
+  #     @attendees.each do |attendee|
+  #       assignment[craft.name] ||= []
+  #       if attendee.interests.include?(craft.name) && attendee.can_build?(craft)
+  #         eligible_attendees << attendee
+  #       end
+  #       assignment[craft.name] << eligible_attendees.sample
+  #     end
+  #   end
+  #   assignment
+  #   require "pry"; binding.pry
+  # end
+
+   def assign_attendees_to_crafts
+     assignment = {}
+     eligible = []
+     attendees_by_craft_interest.each do |craft, attendees|
+       @crafts.each do |craft|
+         attendees.each do |attendee|
+         assignment[craft] ||= []
+         if attendee.interests.include?(craft.name) && attendee.can_build?(craft)
+           eligible << attendee
+           assignment[craft] << eligible.sample
+         end
+       end
+      end
+    end
+    assignment
+  end
 end
+
+
+
