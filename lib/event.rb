@@ -38,5 +38,13 @@ class Event
     end
   end
 
-  
+  def crafts_that_use(tool)
+    crafts = []
+    @crafts.each do |craft|
+      if craft.supplies_required.keys.include?(tool.to_sym)
+        crafts << craft
+      end
+    end
+    crafts
+  end
 end
