@@ -34,4 +34,10 @@ describe Event do
       expect(@event.attendee_names).to eq(["Hector", "Toni"])
     end
   end
+
+  describe '#craft_with_most_supplies' do
+    it 'returns craft name with most supplies' do
+      expect(@event.craft_with_most_supplies).to eq("sewing")
+    end
+  end 
 end
