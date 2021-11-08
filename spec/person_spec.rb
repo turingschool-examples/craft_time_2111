@@ -12,7 +12,7 @@ RSpec.describe Person do
         expect(person.interests).to eq ['sewing', 'millinery', 'drawing']
       end
   end
-  describe '#add_supplies' do
+  describe '#add_supply' do
     it "adds items and their quantities to the supplies hash" do
       person.add_supply('fabric', 4)
       person.add_supply('scissors', 1)
