@@ -24,4 +24,12 @@ class Event
     end
     most.name
   end
+
+  def supply_list
+    string = @crafts.map do |craft|
+      craft.supplies_required.keys
+    end.flatten.uniq
+    # is it bad form to use both syntaxes in one method?
+    string.map {|craft| craft.to_s}
+  end
 end
