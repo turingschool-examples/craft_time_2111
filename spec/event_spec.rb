@@ -38,4 +38,14 @@ RSpec.describe Event do
     expected = ["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"]
     expect(@event.supply_list).to eq(expected)
   end
+
+  it 'attendees_by_craft_interest' do
+    @hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    @toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
+    @tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
+    @knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+    @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+    @painting = Craft.new('painting', {canvas: 1, paint_brush: 2, paints: 5})
+    @event = Event.new("Carla's Craft Connection", [@knitting, @painting, @sewing], [@hector, @toni, @tony])
+  end
 end
