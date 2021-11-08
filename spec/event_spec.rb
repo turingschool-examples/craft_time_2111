@@ -45,5 +45,9 @@ RSpec.describe Event do
     expect(@event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 
+  # xit '#can_build?'do
+  #
+  #   expect(@hector.can_build?(@sewing)).to eq(false)
+  # end
 
 end
