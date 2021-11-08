@@ -6,6 +6,5 @@ class Person
     @name       = data[:name]
     @interests  = data[:interests]
     @supplies   = {}
-    require "pry"; binding.pry
   end
 end
