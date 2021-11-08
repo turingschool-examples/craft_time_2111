@@ -1,7 +1,7 @@
 class Event
   attr_reader :name,
               :crafts,
-              :event
+              :attendees
 
   def initialize(name, crafts, attendees)
     @name = name
