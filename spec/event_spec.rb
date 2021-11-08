@@ -75,7 +75,7 @@ describe 'iteration 4' do
   let(:painting) {Craft.new('painting', {canvas: 1, paint_brush: 2, paints: 5})}
   let(:knitting) {Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})}
 
-  it '#assign attendees to crafts' do 
+  xit '#assign attendees to crafts' do 
     toni.add_supply('yarn', 30)
     toni.add_supply('scissors', 2)
     toni.add_supply('knitting_needles', 5)
