@@ -33,4 +33,8 @@ describe 'iteration 2' do
   it '#craft_with_most_supplies' do 
     expect(event.craft_with_most_supplies).to eq("sewing")
   end
+
+  it '#supply list' do 
+    expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
+  end
 end
