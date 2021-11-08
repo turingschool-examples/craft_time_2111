@@ -27,4 +27,9 @@ RSpec.describe 'Person' do
     hector.add_supply('scissors', 1)
     expect(hector.supplies).to eq({ 'fabric' => 4, 'scissors' => 1 })
   end
+
+  it 'has a new name' do
+    toni = Person.new({ name: 'Toni', interests: %w[sewing knitting] })
+    expect(toni.name).to eq('Toni')
+  end
 end
