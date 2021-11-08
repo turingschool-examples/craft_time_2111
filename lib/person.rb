@@ -1,3 +1,4 @@
+require './lib/craft'
 class Person
   attr_reader :name, :interests, :supplies
 
@@ -15,5 +16,16 @@ class Person
     end
   end
 
+  def can_build?(craft)
+    eq = []
+    @supplies.each do |item, qty|
+      if qty >= craft.supplies_required[item]
+        eq << true
+      end
+    end
+    if eq.all? == true
+       true
+    end
+  end
 
 end
