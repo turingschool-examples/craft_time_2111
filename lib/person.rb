@@ -14,6 +14,8 @@ class Person
     @supplies[supply] += amount
   end
 
+  ## I am still hazey on comparing hashes and how best to access the data.
+
   # def can_build?(craft)
   #   h1 = craft.supplies_required
   #   h2 = supplies

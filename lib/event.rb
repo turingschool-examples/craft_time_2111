@@ -53,3 +53,5 @@ class Event
     crafts_that_use_supply
   end
 end
+
+# Still hazey on building the hashes for attendees by interest. I plan to revisit this challenge and the museum challenge to better understand how to create those hashes.
