@@ -10,4 +10,10 @@ class Event
     @attendees = attendees
   end
 
+  def attendee_names
+    @attendees.map {|attendee| attendee.name}
+  end
+
+
+
 end
