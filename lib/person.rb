@@ -8,8 +8,11 @@ class Person
     @supplies = {}
   end
 
-  def add_supply(k, v)
-    @supplies[k] = v
-  end
+  def add_supply(item, amount)
+   supply = @supplies[item] = amount
 
+   #need to add a value of new item that has same key
+   #transform values?
+   # group by?
+  end
 end
