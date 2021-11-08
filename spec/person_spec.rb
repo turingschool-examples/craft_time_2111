@@ -42,39 +42,37 @@ RSpec.describe Person do
     end
   end
 
-  # describe '#can_build' do
-  #   before(:each) do
-  #     @hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
-  #
-  #     @toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
-  #
-  #     @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
-  #
-  #     @knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
-  #
-  #     @event = Event.new("Carla's Craft Connection", [@sewing, @knitting], [@hector, @toni])
-  #   end
-  #
-  #   it "returns false if person doesn't have enough supplies" do
-  #     expect(@hector.can_build?(@sewing)).to be false
-  #   end
-  #
-  #   it 'returns false even if person has supplies but still not enough' do
-  #     @hector.add_supply('fabric', 7)
-  #     @hector.add_supply('thread', 1)
-  #
-  #     expect(@hector.can_build?(@sewing)).to be false
-  #   end
-  #
-  #   it 'returns true if person supplies match craft supplies' do
-  #     @hector.add_supply('fabric', 7)
-  #     @hector.add_supply('thread', 1)
-  #     @hector.add_supply('scissors', 1)
-  #     @hector.add_supply('sewing_needles', 1)
-  #
-  #     expect(@hector.can_build?(@sewing)).to be true
-  #   end
-  # end
+  describe '#can_build' do
+    before(:each) do
+      @hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
 
+      @toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
 
+      @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+
+      @knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+
+      @event = Event.new("Carla's Craft Connection", [@sewing, @knitting], [@hector, @toni])
+    end
+
+    it "returns false if person doesn't have enough supplies" do
+      expect(@hector.can_build?(@sewing)).to be false
+    end
+
+    it 'returns false even if person has supplies but still not enough' do
+      @hector.add_supply('fabric', 7)
+      @hector.add_supply('thread', 1)
+
+      expect(@hector.can_build?(@sewing)).to be false
+    end
+
+    it 'returns true if person supplies match craft supplies' do
+      @hector.add_supply('fabric', 7)
+      @hector.add_supply('thread', 1)
+      @hector.add_supply('scissors', 1)
+      @hector.add_supply('sewing_needles', 1)
+
+      expect(@hector.can_build?(@sewing)).to be true
+    end
+  end
 end
