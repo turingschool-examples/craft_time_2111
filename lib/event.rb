@@ -20,4 +20,12 @@ class Event
       craft.supplies_required.keys.map {|key| key.to_s}
     end.flatten.uniq
   end
+
+  def attendees_by_craft_interest
+    attendees_by_interest = Hash.new
+    @crafts.each do |craft|
+      attendees_by_interest[craft.name] = @attendees.select {|person| person.interests.include?(craft.name)}
+    end
+    attendees_by_interest
+  end
 end
