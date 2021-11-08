@@ -29,7 +29,27 @@ class Event
     string = @crafts.map do |craft|
       craft.supplies_required.keys
     end.flatten.uniq
-    # is it bad form to use both syntaxes in one method?
-    string.map {|craft| craft.to_s}
+    string.map do |craft|
+      craft.to_s
+    end
+  end
+
+  def attendees_by_craft_interest
+    attendee_by_interest = {}
+    @crafts.each do |craft|
+      if attendee_by_interest.keys.include?(craft.name) == false
+        attendee_by_interest[craft.name] = []
+      end
+      @attendees.each do |attendee|
+        if attendee.interests.include?(craft.name)
+          attendee_by_interest[craft.name] << attendee
+        end
+      end
+    end
+    attendee_by_interest
+  end
+
+  def crafts_that_use(supply)
+
   end
 end
