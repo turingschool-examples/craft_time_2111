@@ -41,4 +41,20 @@ class Event
       craft.supplies_required.keys.to_s.include?(supply)
     end
   end
+
+
+  # returns a hash where the keys are each craft in the event,
+  # and the values are arrays of randomly chosen attendees who
+  # are interested in and can build that craft.
+  def assign_attendees_to_crafts
+    attendees_by_craft = Hash.new()
+    @crafts.each do |craft|
+      attendees_by_craft[craft] ||= []
+      possible_attendees = attendees_by_craft_interest[craft.name].select{|attendee|attendee.can_build?(craft)}
+      number_selected = (0..possible_attendees.length).to_a.sample(1)[0]
+      selected_attendees = possible_attendees.sample(number_selected)
+      attendees_by_craft[craft] = selected_attendees
+    end
+    attendees_by_craft
+  end
 end
