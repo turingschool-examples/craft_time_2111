@@ -34,12 +34,12 @@ describe Craft do
   end
 
   it 'finds craft with most supplies' do
-    expect(@event.craft_with_most_supplies).to eq(@sewing)
+    expect(@event.craft_with_most_supplies).to eq('sewing')
   end
 
   it 'has all supplies' do
     expect(@event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 
-  
+
 end
