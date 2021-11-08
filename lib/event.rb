@@ -26,8 +26,6 @@ class Event
   end
 
   def supply_list
-    @crafts.map do |craft|
-      craft.supplies_required.keys
-    end.flatten
+   supply_symbols_list.map { |symbol| symbol.to_s}.uniq
   end
 end

@@ -38,7 +38,7 @@ describe 'iteration 2' do
     expect(event.supply_symbols_list).to eq([:fabric, :scissors, :thread, :sewing_needles, :yarn, :scissors, :knitting_needles])
   end
 
-  xit '#supply list' do 
+  it '#supply list' do 
     expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 end
