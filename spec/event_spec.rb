@@ -49,6 +49,6 @@ RSpec.describe Event do
   end
 
   it 'can return #crafts_that_use an inputted supply' do
-    expect(event.crafts_that_use('scissors')).to eq([@sewing, @knitting])
+    expect(@event.crafts_that_use('scissors')).to eq([@sewing, @knitting])
   end
 end
