@@ -1,8 +1,10 @@
-class Person
 
+
+class Person
   attr_reader :name,
               :interests,
               :supplies
+
 
   def initialize(details)
     @name = details[:name]
@@ -17,4 +19,7 @@ class Person
       @supplies[supply] = amount
     end
   end
+
+
+
 end

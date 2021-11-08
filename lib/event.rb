@@ -54,4 +54,17 @@ class Event
     interested
   end
 
+  def crafts_that_use(supply)
+    users = []
+    users_2 = []
+    @crafts.each do |craft|
+      craft.supplies_required.keys.each do |supply|
+          users.append(supply.to_s)
+            if users.include?(supply)
+              user_2.append(craft)
+            end
+      end
+    end
+    users_2
+  end
 end
