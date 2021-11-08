@@ -38,6 +38,9 @@ RSpec.describe Event do
   end
 
   it '#craft_with_most_supplies' do
-    expect()
+    expect(@event.craft_with_most_supplies).to eq(@sewing)
+    require "pry"; binding.pry
   end
+
+  
 end

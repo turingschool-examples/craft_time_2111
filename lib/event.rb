@@ -14,9 +14,11 @@ class Event
     end
   end
 
-  # def craft_with_most_supplies
-  #   @crafts
-  #   require "pry"; binding.pry
-  # end
+  def craft_with_most_supplies
+    @crafts.max_by do |craft|
+      craft.supplies_required.keys.count
+    end
+  end
+
 
 end
