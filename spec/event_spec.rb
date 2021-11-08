@@ -39,5 +39,11 @@ describe Event do
     it 'returns craft name with most supplies' do
       expect(@event.craft_with_most_supplies).to eq("sewing")
     end
-  end 
+  end
+
+  describe '#supplies_list' do
+    it 'returns array of supplies' do
+      expect(@event.supplies_list).to eq(["yarn", "scissors", "knitting_needles", "fabric", "thread", "sewing_needles"])
+    end
+  end
 end
