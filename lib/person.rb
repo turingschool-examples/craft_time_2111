@@ -6,6 +6,10 @@ class Person
   def initialize(attributes)
     @name      = attributes[:name]
     @interests = attributes[:interests]
-    @supplies  = {}
+    @supplies  = Hash.new {|hash, key| hash[key] = 0}
+  end
+
+  def add_supply(item, value)
+    @supplies[item] += value
   end
 end
