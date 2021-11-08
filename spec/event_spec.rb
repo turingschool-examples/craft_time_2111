@@ -49,7 +49,7 @@ RSpec.describe Event do
 
     describe '#craft_with_most_supplies' do
       it 'returns the craft with the most supplies' do
-        expect(@Event.craft_with_most_supplies).to eq "sewing"
+        expect(@event.craft_with_most_supplies).to eq "sewing"
       end
     end
   end
