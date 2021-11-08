@@ -30,6 +30,6 @@ RSpec.describe 'Person' do
 
   it 'has a new name' do
     toni = Person.new({ name: 'Toni', interests: %w[sewing knitting] })
-    expect(toni.name).to eq('Toni')
+    expect(toni).to be_an_instance_of(Person)
   end
 end
