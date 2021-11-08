@@ -44,4 +44,24 @@ class Event
     # Return string supply list (double check for copies)
     supply_list = supply_list.uniq
   end
+
+  def attendees_by_craft_interest
+    craft_interest_hash = {}
+
+    @crafts.each do |craft|
+      craft_interest_hash[craft.name] = []
+
+      @attendees.each do |attendee|
+        if attendee.interests.include?(craft.name)
+          craft_interest_hash[craft.name] << attendee
+        end
+      end
+    end
+
+    craft_interest_hash
+    # require 'pry'; binding.pry
+  end
+
+
+
 end
