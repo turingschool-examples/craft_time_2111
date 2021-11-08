@@ -7,4 +7,12 @@ class Person
     @interests = info[:interests]
     @supplies = {}
   end
+
+  def add_supply(supply, amount)
+    if @supplies.keys.include?(supply) == false
+      @supplies[supply] = amount
+    else
+      @supplies[supply] += amount
+    end
+  end
 end
