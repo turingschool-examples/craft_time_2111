@@ -42,17 +42,27 @@ RSpec.describe Event do
     it '#supply_list' do
       expect(@event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
     end
+  end
 
-    it '#can_build?' do
-      @hector.add_supply('fabric', 7)
-      @hector.add_supply('thread', 1)
+  describe 'Iteration 3' do
+    before(:each) do
+      @hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+      @toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
+      @tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
+      @knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+      @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1})
+      @painting = Craft.new('painting', {canvas: 1, paint_brush: 2, paints: 5})
+      @event = Event.new("Carla's Craft Connection", [@knitting, @painting, @sewing], [@hector, @toni, @tony])
+    end
 
-      expect(@hector.can_build?(@sewing)).to be false
+    it 'attendees_by_craft_interest' do
+      expected = {
+        'knitting' => [@toni, @tony],
+        'painting' => [],
+        'sewing' => [@hector, @tony]
+      }
 
-      @hector.add_supply('scissors', 1)
-      @hector.add_supply('sewing_needles', 1)
-
-      expect(@hector.can_build?(@sewing)).to be true
+      expect(@event.attendees_by_craft_interest).to eq(expected)
     end
   end
 end
