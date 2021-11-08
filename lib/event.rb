@@ -11,4 +11,17 @@ class Event
     @attendees = attendees
   end
 
+  def attendee_names
+    @attendees.map { |attendee| attendee.name }
+  end
+
+  def craft_with_most_supplies
+    @crafts.max_by { |craft| craft.supplies_required.length }.name
+  end
+
+  def supply_list
+    supply_list = crafts.flat_map { |craft| craft.supplies_required.keys }.uniq
+    supply_list = supply_list.map { |supply| supply.to_s }
+  end
+
 end
