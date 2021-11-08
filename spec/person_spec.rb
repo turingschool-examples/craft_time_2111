@@ -1,7 +1,9 @@
 require './lib/person'
+require './lib/craft'
 
 describe Person do
   before(:each) do
+    @knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
     @person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
   end
 
@@ -26,5 +28,15 @@ describe Person do
     @person.add_supply('scissors', 1)
 
     expect(@person.supplies.count).to eq(2)
+  end
+
+  it 'determines if person can build a craft' do
+    expect(@person.can_build?(@knitting)).to eq(false)
+
+    @person.add_supply('yarn', 20)
+    @person.add_supply('scissors', 1)
+    @person.add_supply('knitting_needles', 2)
+
+    expect(@person.can_build?(@knitting)).to eq(true)
   end
 end
