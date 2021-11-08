@@ -28,4 +28,13 @@ class Event
   def supply_list
    supply_symbols_list.map { |symbol| symbol.to_s}.uniq
   end
+
+  def attendees_by_craft_interest
+    @crafts.reduce({}) do |hash, craft|
+      hash[craft.name.to_s] = @attendees.find_all do |attendee|
+        attendee.interests.include?(craft.name.to_s)
+      end
+      hash
+    end
+  end
 end
