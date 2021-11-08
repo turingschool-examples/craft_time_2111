@@ -17,6 +17,7 @@ RSpec.describe Event do
     expect(event.name).to eq("Carla's Craft Connection")
     expect(event.crafts).to eq([craft])
     expect(event.attendees).to eq([person])
-    require "pry"; binding.pry
   end
+
+  
 end

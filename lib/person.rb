@@ -7,4 +7,9 @@ class Person
     @interests  = data[:interests]
     @supplies   = {}
   end
+
+  def add_supply(material, amount)
+    @supplies[material] ||= 0
+    @supplies[material] += amount
+  end
 end
