@@ -18,4 +18,16 @@ class Event
       craft.supplies_required.length
     end.name
   end
+
+  def supply_symbols_list
+        @crafts.map do |craft|
+      craft.supplies_required.keys
+    end.flatten
+  end
+
+  def supply_list
+    @crafts.map do |craft|
+      craft.supplies_required.keys
+    end.flatten
+  end
 end
