@@ -17,15 +17,14 @@ class Person
     end
   end
 
-  def supplies_to_symbol
-    @supplies.transform_keys { |type| type.to_sym }
-  end
-
   def can_build?(craft)
     return false if @supplies.empty?
-
-    if @supplies.keys
-    
+     
+    has_supplies = @supplies.map do |type1, quantity1|
+      craft.supplies_required.find_all do |type2, quantity2|
+        type1 == type2.to_s && quantity1 >= quantity2
+      end
     end
+    has_supplies.length == craft.supplies_required.length
   end
 end

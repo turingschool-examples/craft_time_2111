@@ -32,14 +32,8 @@ describe 'iteration 2' do
   let(:toni) {Person.new({name: 'Toni', interests: ['sewing', 'knitting']})}
   let(:sewing) {Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})}
   let(:knitting) {Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})}
-  
-  it '#supplies to symbol' do 
-    hector.add_supply('fabric', 7)
-    hector.add_supply('thread', 1)
-  expect(hector.supplies_to_symbol).to eq({:fabric => 7, :thread => 1})
-  end
 
-  xit '#can build' do 
+  it '#can build' do 
     expect(hector.can_build?(sewing)).to be(false)
 
     hector.add_supply('fabric', 7)
