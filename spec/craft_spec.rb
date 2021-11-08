@@ -1,6 +1,18 @@
 require './lib/craft'
-craft = Craft.new('knitting', { yarn: 20, scissors: 1, knitting_needles: 2 })
 
-craft.name
+RSpec.describe 'Craft' do
+  it 'exists' do
+    craft = Craft.new('knitting', { yarn: 20, scissors: 1, knitting_needles: 2 })
+    expect(craft).to be_an_instance_of(Craft)
+  end
 
-craft.supplies_required
+  it 'has a name' do
+    craft = Craft.new('knitting', { yarn: 20, scissors: 1, knitting_needles: 2 })
+    expect(craft.name).to eq('knitting')
+  end
+
+  it 'supplies required' do
+    craft = Craft.new('knitting', { yarn: 20, scissors: 1, knitting_needles: 2 })
+    expect(craft.supplies_required).to eq({ yarn: 20, scissors: 1, knitting_needles: 2 })
+  end
+end
