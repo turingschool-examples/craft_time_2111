@@ -21,4 +21,14 @@ class Event
       craft.supplies_required.length
     end.name
   end
+
+  def supplies_list
+    supplies = @crafts.flat_map do |craft|
+      craft.supplies_required.keys
+    end.uniq
+
+    supplies.map do |supply|
+      supply.to_s
+    end
+  end
 end
