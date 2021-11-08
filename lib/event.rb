@@ -36,4 +36,20 @@ class Event
     supply_list.uniq
   end
 
+  def crafts_that_use(supply)
+    crafts_that_use_supply = []
+
+    @crafts.each do |craft|
+      string_keys = []
+
+      craft.supplies_required.each_key do |k|
+        string_keys << k.to_s
+      end
+
+      if string_keys.include?(supply)
+        crafts_that_use_supply << craft
+      end
+    end
+    crafts_that_use_supply
+  end
 end

@@ -81,6 +81,10 @@ RSpec.describe Event do
       it 'returns array of crafts if supplies_required includes passed argument' do
         expect(@event.crafts_that_use("scissors")).to eq([@knitting, @sewing])
       end
+
+      it 'returns empty array if no crafts use argument' do
+        expect(@event.crafts_that_use("fire")).to eq([])
+      end
     end
   end
 end
