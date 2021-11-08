@@ -1,5 +1,7 @@
 class Event
-  def initialize(name, _craft, _attendees)
+  attr_reader :crafts, :attendees
+
+  def initialize(name, [crafts], [attendees])
     @name = name
     @crafts = []
     @attendees = []

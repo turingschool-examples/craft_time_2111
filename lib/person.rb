@@ -6,4 +6,8 @@ class Person
     @interests = attributes.fetch(:interests)
     @supplies = {}
   end
+
+  def add_supply(object, count)
+    @supplies[object] = count
+  end
 end
