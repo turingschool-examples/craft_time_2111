@@ -18,7 +18,7 @@ RSpec.describe Event do
   end
 
   it 'can list crafts in a given event' do
-    expect(@event.name).to eq([@craft])
+    expect(@event.crafts).to eq([@craft])
   end
 
   it 'can list attendees of a given event' do
