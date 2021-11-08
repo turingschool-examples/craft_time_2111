@@ -5,4 +5,8 @@ class Person
     @interests = attributes[:interests]
     @supplies = {}
   end
+
+  def add_supply(supply_name, amount)
+    @supplies[supply_name] += amount
+  end
 end

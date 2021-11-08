@@ -22,7 +22,7 @@ pry(main)> require './lib/event'
 #=> true
 
 pry(main)> person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
-#=> #<Person:0x00007fd379b96028...>
+#=> person
 
 pry(main)> person.name
 #=> "Hector"
@@ -34,7 +34,7 @@ pry(main)> person.supplies
 #=> {}
 
 pry(main)> craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
-#=> #<Craft:0x00007fd37b818318...>
+#=> craft
 
 pry(main)> craft.name
 #=> "knitting"
@@ -49,10 +49,10 @@ pry(main)> event.name
 #=> "Carla's Craft Connection"
 
 pry(main)> event.crafts
-#=> [#<Craft:0x00007fd37b818318...>]
+#=> [craft]
 
 pry(main)> event.attendees
-#=> [#<Person:0x00007fd379b96028...>]
+#=> [person]
 
 pry(main)> person.add_supply('fabric', 4)
 
