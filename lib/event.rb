@@ -36,4 +36,22 @@ class Event
     supply_list.uniq
   end
 
+  def attendees_by_craft_interest
+    new_hash = Hash.new
+    @crafts.each do |craft|
+      new_hash[craft.name] = attendees_interested(craft.name)
+    end
+    new_hash
+  end
+
+  def attendees_interested(craft)
+    interested = []
+    @attendees.each do |attendee|
+      if attendee.interests.include?(craft) == true
+        interested << attendee
+      end
+    end
+    interested
+  end
+
 end
