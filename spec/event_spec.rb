@@ -42,5 +42,7 @@ RSpec.describe Event do
     require "pry"; binding.pry
   end
 
-  
+  it '#supply_list' do
+    expect(@event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
+  end 
 end
