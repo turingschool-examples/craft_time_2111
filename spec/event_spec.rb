@@ -61,4 +61,10 @@ describe Event do
     end
   end
 
+  describe '#craft_with_most_supplies' do
+     it 'returns the craft with the most needed supplies' do
+       expect(@event.craft_with_most_supplies).to eq("sewing")
+     end
+  end
+
 end
