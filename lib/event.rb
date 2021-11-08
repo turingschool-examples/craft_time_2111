@@ -32,7 +32,7 @@ class Event
   end
 
   def crafts_that_use(supply)
-    @crafts.find_all { |craft| craft.supplies_required.keys.include?(supply.to_sym) }
+    @crafts.find_all { |craft| craft.supplies_required.keys.include?(supply) }
   end
 
 end

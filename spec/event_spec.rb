@@ -51,8 +51,8 @@ RSpec.describe Event do
 
   describe '#crafts_that_use' do
     it 'returns an array of crafts that use given supply' do
-      expect(@event.crafts_that_use('scissors')).to eq([@knitting, @sewing])
-      expect(@event.crafts_that_use('fire')).to eq([])
+      expect(@event.crafts_that_use(:scissors)).to eq([@knitting, @sewing])
+      expect(@event.crafts_that_use(:fire)).to eq([])
     end
   end
 
