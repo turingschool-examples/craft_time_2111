@@ -9,7 +9,7 @@ class Person
     @supplies = {}
   end
 
-  def add_supply(supply, count)
-    @supplies[supply] = count
+  def add_supply(item, quantity)
+    @supplies[item] += quantity
   end
 end
