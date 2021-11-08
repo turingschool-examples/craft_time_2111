@@ -1,3 +1,4 @@
+require './lib/person'
 RSpec.describe Person do
 
   before(:each) do
