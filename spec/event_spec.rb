@@ -59,7 +59,7 @@ RSpec.describe Event do
       expected = {
         'knitting' => [@toni, @tony],
         'painting' => [],
-        'sewing' => [@hector, @tony]
+        'sewing' => [@hector, @toni]
       }
 
       expect(@event.attendees_by_craft_interest).to eq(expected)
