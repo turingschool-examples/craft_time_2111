@@ -6,7 +6,8 @@ class Person
   def initialize(info)
     @name = info[:name]
     @interests = info[:interests]
-    @supplies = {}
+    ###Understand this
+    @supplies = Hash.new(0)
   end
 
   def add_supply(item, quantity)
