@@ -42,3 +42,21 @@ describe 'iteration 2' do
     expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 end
+
+describe 'iteration 3' do 
+  let(:event) {Event.new("Carla's Craft Connection", [knitting, painting, sewing], [hector, toni, tony])}
+  let(:hector) {Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})}
+  let(:toni) {Person.new({name: 'Toni', interests: ['sewing', 'knitting']})}
+  let(:tony) {Person.new({name: 'Tony', interests: ['drawing', 'knitting']})}
+  let(:sewing) {Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1})}
+  let(:painting) {Craft.new('painting', {canvas: 1, paint_brush: 2, paints: 5})}
+  let(:knitting) {Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})}
+
+  it '#attendees_by_craft_interest' do 
+    expect(event.attendees_by_craft_interest).to eq({
+    "knitting"=>[toni, tony],
+    "painting"=>[],
+    "sewing"=>[hector, toni]   
+    })
+  end
+end
