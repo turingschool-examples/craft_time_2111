@@ -34,4 +34,22 @@ class Event
     end
     list_of_supplies.uniq
   end
+
+  def attendees_by_craft_interest
+    craft_interest_hash = {}
+    @crafts.map do |craft|
+      require "pry"; binding.pry
+      craft_interest_hash[craft.name] = @attendees.select { |attendee| attendees.interest == craft.name}
+    end
+    craft_interest_hash
+  end
+
+  def crafts_that_use(object)
+    crafts_with_object = @attendees.select { |attendee| attendee.interests.name == object}
+    crafts_with_object.map do |craft|
+      @attendees.select do |attendee|
+        attendee.name
+      end
+    end.flatten
+  end
 end

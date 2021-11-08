@@ -137,19 +137,19 @@ pry(main)> require './lib/event'
 #=> true
 
 pry(main)> hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
-#=> #<Person:0x00007fe442377890...>
+#=> hector
 
 pry(main)> toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
-#=> #<Person:0x00007fe44286a348...>
+#=> toni
 
 pry(main)> tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
-#=> #<Person:0x00007fe442335788...>
+#=> tony
 
 pry(main)> knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
-#=> #<Craft:0x00007fe43381a640...>
+#=> knitting
 
 pry(main)> sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1})
-#=> #<Craft:0x00007fe4422e6610...>
+#=> sewing
 
 pry(main)> painting = Craft.new('painting', {canvas: 1, paint_brush: 2, paints: 5})
 #=> #<Craft:0x00007fe4330159e0...>
@@ -159,13 +159,13 @@ pry(main)> event = Event.new("Carla's Craft Connection", [knitting, painting, se
 
 pry(main)> event.attendees_by_craft_interest
 #=> {
-#    "knitting"=>[#<Person:0x00007fe44286a348...>,#<Person:0x00007fe442335788...>],
+#    "knitting"=>[toni, tony],
 #    "painting"=>[],
-#    "sewing"=>[#<Person:0x00007fe442377890...>,#<Person:0x00007fe44286a348...>]
+#    "sewing"=>[hector, toni]
 #   }
 
 pry(main)> event.crafts_that_use('scissors')
-#=> [#<Craft:0x00007fe43381a640...>,#<Craft:0x00007fe4422e6610...>]
+#=> [knitting,sewing]
 
 pry(main)> event.crafts_that_use('fire')
 #=> []
