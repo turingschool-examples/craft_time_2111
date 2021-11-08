@@ -20,4 +20,11 @@ describe Person do
   it 'has supplies' do
     expect(@person.supplies).to be_a(Hash)
   end
+
+  it 'adds supplies' do
+    @person.add_supply('fabric', 4)
+    @person.add_supply('scissors', 1)
+
+    expect(@person.supplies.count).to eq(2)
+  end
 end
