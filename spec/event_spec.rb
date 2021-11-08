@@ -8,7 +8,7 @@ RSpec.describe 'Event' do
     expect(event).to be_an_instance_of(Event)
   end
 
-  xit 'has a name' do
+  it 'has a name' do
     event = Event.new("Carla's Craft Connection", [craft], [person])
     expect(event.name).to eq("Carla's Craft Connection")
   end
