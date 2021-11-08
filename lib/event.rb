@@ -26,5 +26,14 @@ class Event
     supply_count.key(supply_count.values.max)
   end
 
+  def supply_list
+    supply_list = []
+    @crafts.each do |craft|
+      craft.supplies_required.keys.each do |supply|
+        supply_list.append(supply.to_s)
+      end.flatten
+    end
+    supply_list.uniq
+  end
 
 end
