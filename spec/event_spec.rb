@@ -59,4 +59,8 @@ describe 'iteration 3' do
     "sewing"=>[hector, toni]   
     })
   end
+
+  it '#crafts that use' do 
+  expect(event.crafts_that_use('scissors')).to eq([knitting, sewing])
+  end
 end

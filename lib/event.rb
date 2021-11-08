@@ -37,4 +37,6 @@ class Event
       hash
     end
   end
+
+  
 end
