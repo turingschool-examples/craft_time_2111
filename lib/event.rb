@@ -18,15 +18,15 @@ class Event
 
   def craft_with_most_supplies
     supplies_per_craft = []
-
+    # Create array of key sizes of all crafts
     @crafts.each do |craft|
       supplies_per_craft << craft.required_supplies.keys.size
     end
-
+    # Find largest key size value
     most_supplies = supplies_per_craft.max
-
+    # Find array position of largest key size value
     craft_with_most_supplies = supplies_per_craft.rindex(most_supplies)
-
+    # Bind array position of largest key size value with that of crafts array
     craft_name = @crafts[craft_with_most_supplies].name
   end
 
