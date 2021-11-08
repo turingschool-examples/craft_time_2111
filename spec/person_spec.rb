@@ -9,5 +9,13 @@ describe Person do
     it 'exists' do
       expect(@person).to be_instance_of(Person)
     end
+
+    it 'has a name' do
+      expect(@person.name).to eq('Hector')
+    end
+
+    it 'has interests' do
+      expect(@person.interests).to eq(['sewing', 'millinery', 'drawing'])
+    end 
   end
-end  
+end
