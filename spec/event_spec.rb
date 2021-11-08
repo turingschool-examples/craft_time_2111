@@ -43,7 +43,13 @@ RSpec.describe Event do
 
     describe '#attendee_names' do
       it 'returns array of attendee names' do
-        expect(event.attendee_names).to eq(["Hector", "Toni"])
+        expect(@event.attendee_names).to eq(["Hector", "Toni"])
+      end
+    end
+
+    describe '#craft_with_most_supplies' do
+      it 'returns the craft with the most supplies' do
+        expect(@Event.craft_with_most_supplies).to eq "sewing"
       end
     end
   end
