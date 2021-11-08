@@ -16,6 +16,15 @@ describe Person do
 
     it 'has interests' do
       expect(@person.interests).to eq(['sewing', 'millinery', 'drawing'])
+    end
+  end
+
+  describe '#add_supply' do
+    it 'adds supplies' do
+      @person.add_supply('fabric', 4)
+      @person.add_supply('scissors', 1)
+      @person.add_supply('fabric', 3)
+      expect(@person.supplies).to eq({"fabric"=>7, "scissors"=>1})
     end 
   end
 end
