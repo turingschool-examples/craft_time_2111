@@ -17,7 +17,7 @@ class Person
 
   def can_build?(craft)
     craft.supplies_required.map do |supply, count|
-      @supplies.keys.include?(supply.to_s) && @supplies[supply.to_s] >= count
+      @supplies.keys.include?(supply) && @supplies[supply] >= count
     end.all? { |bool| bool == true }
   end
 
