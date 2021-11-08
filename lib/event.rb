@@ -7,4 +7,16 @@ class Event
     @crafts = crafts
     @attendees = attendees
   end
+
+  def attendee_names
+    @attendees.map do |attendee|
+      attendee.name
+    end
+  end
+
+  # def craft_with_most_supplies
+  #   @crafts
+  #   require "pry"; binding.pry
+  # end
+
 end
