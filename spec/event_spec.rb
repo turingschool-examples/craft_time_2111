@@ -55,7 +55,7 @@ RSpec.describe Event do
       @event = Event.new("Carla's Craft Connection", [@knitting, @painting, @sewing], [@hector, @toni, @tony])
     end
 
-    it 'attendees_by_craft_interest' do
+    it '#attendees_by_craft_interest' do
       expected = {
         'knitting' => [@toni, @tony],
         'painting' => [],
@@ -63,6 +63,11 @@ RSpec.describe Event do
       }
 
       expect(@event.attendees_by_craft_interest).to eq(expected)
+    end
+
+    it '#crafts_that_use' do
+      expect(@event.crafts_that_use('scissors')).to eq([@knitting, @sewing])
+      expect(@event.crafts_that_use('fire')).to eq([])
     end
   end
 end
