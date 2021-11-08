@@ -49,6 +49,9 @@ class Event
   end
 
   def assign_attendees_to_crafts
-    
+    @crafts.reduce({}) do |hash, craft|
+      require 'pry'; binding.pry
+      hash[craft] = []
+    end
   end
 end
