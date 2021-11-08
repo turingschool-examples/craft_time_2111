@@ -11,7 +11,7 @@ class Person
     @name      = info[:name]
     @interests = info[:interests]
     @supplies  = Hash.new(0)
-    @can_they  = nil
+    # @can_they  = nil
   end
 
   def add_supply(supply, amount_of_supply)
@@ -19,7 +19,10 @@ class Person
   end
 
   def can_build?(craft)
-    craft_hash = craft.supplies_required
-    require "pry"; binding.pry
+    craft.supplies_required.map do |supply, count|
+      if @supplies.keys.include?(supply) && @supplies[supply] >= count
+        bool == true
+      end
+     end
   end
 end

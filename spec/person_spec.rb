@@ -36,16 +36,16 @@ RSpec.describe "Person"  do
   end
 
   it "can tell if the person has enough supplies for the craft" do
-    # expect(@hector.can_build?(@sewing)).to eq false
+    expect(@hector.can_build?(@sewing)).to eq false
 
     @hector.add_supply('fabric', 7)
     @hector.add_supply('thread', 1)
 
     expect(@hector.can_build?(@sewing)).to eq false
 
-    # @hector.add_supply('scissors', 1)
-    # @hector.add_supply('sewing_needles', 1)
-    #
-    # expect(@hector.can_build?(@sewing)).to eq true
+    @hector.add_supply('scissors', 1)
+    @hector.add_supply('sewing_needles', 1)
+
+    expect(@hector.can_build?(@sewing)).to eq true
   end
 end
