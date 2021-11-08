@@ -52,6 +52,11 @@ RSpec.describe Event do
         expect(@event.craft_with_most_supplies).to eq "sewing"
       end
     end
-  end
 
+    describe '#supply_list' do
+      it 'returns array of supplies needed for event' do
+        expect(@event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
+      end
+    end
+  end
 end
