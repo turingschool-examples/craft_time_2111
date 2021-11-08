@@ -15,4 +15,10 @@ class Person
     @supplies[supply_name] += count
   end
 
+  def can_build?(craft)
+    craft.supplies_required.map do |supply, count|
+      @supplies.keys.include?(supply.to_s) && @supplies[supply.to_s] >= count
+    end.all? { |bool| bool == true }
+  end
+
 end
