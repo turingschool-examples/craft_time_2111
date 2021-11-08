@@ -15,4 +15,29 @@ class Event
     end
   end
 
+  def craft_with_most_supplies
+    craft = @crafts.max_by do |craft|
+      craft.supplies_required.keys.count
+    end
+    craft.name
+  end
+
+  def supply_list
+    @crafts.map do |craft|
+      craft.supplies_required.keys.map do |key|
+        key.to_s
+      end
+    end.flatten.uniq
+  end
+
+  def attendees_by_craft_interest
+    new_hash = {}
+    keys = @crafts.find_all do |craft|
+      craft.name
+    end
+
+    keys.each do |key|
+      new_hash[key] = @attendees.find_all { |attendee| attendee.interests == key}
+    end
+  end
 end
