@@ -1,5 +1,5 @@
 class Craft
-  attr_reader :name, :supplies_required
+  attr_accessor :name, :supplies_required
 
   def initialize(name, supplies_required)
     @name = name

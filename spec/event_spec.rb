@@ -95,7 +95,7 @@ describe Event do
     end
   end
 
-  describe '#atendees_by_craft_interest' do
+  xdescribe '#atendees_by_craft_interest' do
     it 'returns a boolean response if there are enough supplies to do the craft' do
       @hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
       @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
@@ -106,7 +106,7 @@ describe Event do
       @hector.add_supply('thread', 1)
       @hector.add_supply('scissors', 1)
       @hector.add_supply('sewing_needles', 1)
-      expect(@event.can_build?(@sewing)).to be true
+      expect(@event.attendees_by_craft_interest).to eq()
     end
   end
 
