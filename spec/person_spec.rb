@@ -14,6 +14,7 @@ RSpec.describe Person do
     it 'has attributes' do
       expect(@person.name).to eq('Hector')
       expect(@person.interests).to eq(['sewing', 'millinery', 'drawing'])
+      expect(@person.supplies).to eq({})
     end
   end
 end
