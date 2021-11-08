@@ -59,9 +59,26 @@ class Event
     end
 
     craft_interest_hash
-    # require 'pry'; binding.pry
+    # holy shit
   end
 
+  def crafts_that_use(inputted_supply)
+
+    # Turn string input into symbol (should probably find a better variable name)
+    inp_sup_to_sym = inputted_supply.to_sym
+
+    uses_supply = []
+     # Look through all crafts
+    @crafts.each do |craft|
+      # If craft supplies has key we're looking for, shift into our array
+      if craft.required_supplies.keys.include?(inp_sup_to_sym)
+        # require 'pry'; binding.pry
+        uses_supply << craft
+      end
+    end
+
+    uses_supply # Return array of crafts requiring supply
+  end
 
 
 end
