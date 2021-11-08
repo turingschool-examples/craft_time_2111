@@ -31,9 +31,22 @@ class Event
     supply_list.uniq
   end
 
-
-
-
-
-
+  def attendees_by_craft_interest
+    interest_hash = {}
+    @crafts.each do |craft|
+      @attendees.each do |attendee|
+        interest_hash[craft.name] ||= []
+        if attendee.interests.include?(craft.name)
+          interest_hash[craft.name] << attendee
+        end
+      end
+    end
+    interest_hash
   end
+
+  def crafts_that_use(element)
+    @crafts.find_all do |craft|
+      craft.supplies_required.keys.include?(element.to_sym)
+    end
+  end
+end
