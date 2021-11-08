@@ -1,9 +1,10 @@
+require './lib/craft'
 class Event
-  attr_reader :crafts, :attendees
+  attr_accessor :craft, :attendees, :name
 
-  def initialize(name, [crafts], [attendees])
+  def initialize(name, _craft, _person)
     @name = name
-    @crafts = []
-    @attendees = []
+    @craft = Craft
+    @attendees = Person
   end
 end
