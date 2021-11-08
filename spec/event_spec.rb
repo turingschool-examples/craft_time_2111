@@ -18,7 +18,6 @@ RSpec.describe Event do
     craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
     event = Event.new("Carla's Craft Connection", [craft], [person])
 
-
     expect(event.crafts).to eq([])
     event.add_crafts(craft)
     expect(event.crafts).to eq([craft])
@@ -44,5 +43,35 @@ RSpec.describe Event do
     event.add_attendees(hector)
     event.add_attendees(toni)
     expect(event.attendee_names).to eq(["Hector", "Toni"])
+  end
+
+  it 'can list crafts with the most supplies' do
+    hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
+    sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+    knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+    event = Event.new("Carla's Craft Connection", [sewing, knitting], [hector, toni])
+
+    event.add_attendees(hector)
+    event.add_attendees(toni)
+    event.add_crafts(sewing)
+    event.add_crafts(knitting)
+
+    expect(event.craft_with_most_supplies).to eq("sewing")
+  end
+
+  it 'can list supplies' do
+    hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
+    sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+    knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+    event = Event.new("Carla's Craft Connection", [sewing, knitting], [hector, toni])
+
+    event.add_attendees(hector)
+    event.add_attendees(toni)
+    event.add_crafts(sewing)
+    event.add_crafts(knitting)
+
+    expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 end
