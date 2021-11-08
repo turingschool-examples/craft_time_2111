@@ -1,3 +1,5 @@
+require './lib/craft'
+
 class Person
 
   attr_reader :name, :interests, :supplies
