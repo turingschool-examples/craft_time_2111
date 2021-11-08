@@ -20,4 +20,5 @@ class Event
   def supply_list
     @crafts.map {|craft| craft.supplies_required}.map {|hash| hash.keys}.flatten.map {|sym| sym.to_s}.uniq
   end
+
 end
