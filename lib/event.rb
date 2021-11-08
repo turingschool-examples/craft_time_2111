@@ -20,8 +20,7 @@ class Event
   end
 
   def supply_list
-    supply_list = crafts.flat_map { |craft| craft.supplies_required.keys }.uniq
-    supply_list = supply_list.map { |supply| supply.to_s }
+    crafts.flat_map { |craft| craft.supplies_required.keys }.uniq
   end
 
   def attendees_by_craft_interest

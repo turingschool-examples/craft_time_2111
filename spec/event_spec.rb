@@ -34,7 +34,7 @@ RSpec.describe Event do
 
   describe '#supply_list' do
     it 'returns the list of needed supplies for all crafts as an array' do
-      expect(@event.supply_list).to eq(["yarn", "scissors", "knitting_needles", "canvas", "paint_brush", "paints", "fabric", "thread", "sewing_needles"])
+      expect(@event.supply_list).to eq([:yarn, :scissors, :knitting_needles, :canvas, :paint_brush, :paints, :fabric, :thread, :sewing_needles])
     end
   end
 
