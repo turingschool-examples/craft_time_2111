@@ -20,9 +20,15 @@ RSpec.describe Event do
       end
   end
 
-  describe '#craft_with_most_supplies' do 
+  describe '#craft_with_most_supplies' do
     it "finds the craft that needs the most unique items" do
       expect(event.craft_with_most_supplies).to eq(sewing)
+    end
+  end
+
+  describe '#supply_list' do
+    it "generates a list of all supply types needed" do
+      expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
     end
   end
 end
