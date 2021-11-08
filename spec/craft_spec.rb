@@ -9,6 +9,7 @@ RSpec.describe Craft do
 
       it "has attributes" do
         expect(craft.name).to eq "knitting"
-        expect(craft.interests).to eq {yarn: 20, scissors: 1, knitting_needles: 2}
+        expect(craft.supplies_required).to eq({yarn: 20, scissors: 1, knitting_needles: 2})
       end
   end
+end

@@ -11,4 +11,8 @@ class Person
     supplies[item] ||= 0
     supplies[item] += quantity
   end
+
+  def can_build?(craft)
+    @supplies == craft.supplies_required
+  end
 end
