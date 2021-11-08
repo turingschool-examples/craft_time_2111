@@ -9,4 +9,12 @@ class Person
     @interests = details[:interests]
     @supplies =Hash.new
   end
-end 
+
+  def add_supply(supply, amount)
+    if @supplies.keys.include?(supply)
+      @supplies[supply] += amount
+    else
+      @supplies[supply] = amount
+    end
+  end
+end
