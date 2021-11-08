@@ -67,4 +67,18 @@ describe Event do
      end
   end
 
+  describe '#supply_list' do
+    it 'returns the list of all supplies needed' do
+      expected = ["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"]
+      expect(@event.supply_list).to eq(expected)
+    end
+  end
+
+  describe '#can_build?' do
+    it 'returns a boolean response if there are enough supplies to do the craft' do
+      @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+      expected(@event.can_build?(@sewing)).to be false
+    end
+  end
+
 end
