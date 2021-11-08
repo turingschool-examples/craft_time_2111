@@ -10,4 +10,12 @@ class Person
     @supplies[supply_name] ||= 0
     @supplies[supply_name] += amount
   end
+
+  def can_build?(craft_name)
+    if self.supplies >= craft_name.supplies_required
+      true
+    else
+      false
+    end
+  end
 end

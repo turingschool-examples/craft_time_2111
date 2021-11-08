@@ -28,8 +28,10 @@ class Event
   def supply_list
     list_of_supplies = []
     @crafts.each do |craft|
-      require "pry"; binding.pry
-      list_of_supplies << craft.supplies_required.key
-    end.uniq
+      craft.supplies_required.each do |k, v|
+        list_of_supplies << k.to_s
+      end
+    end
+    list_of_supplies.uniq
   end
 end
