@@ -1,24 +1,23 @@
 require './lib/person'
 
-
-Rspec.describe 'Person' do
+RSpec.describe 'Person' do
   it 'exists' do
-  person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
-  expect(persons).to be_an_instance_of(Person)
+    person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
+    expect(person).to be_an_instance_of(Person)
   end
 
-  it 'has a name' do
+  xit 'has a name' do
     person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
-  expect(person.name).to eq('Hector')
+    expect(person.name).to eq('Hector')
   end
 
-  it 'has interests' do
+  xit 'has interests' do
     person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
-  expect(person.interests).to eq([sewing millinery drawing])
+    expect(person.interests).to eq(%w[sewing millinery drawing])
   end
 
-  it 'has interests' do
+  xit 'has interests' do
     person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
-  expect(person.supplies).to eq({})
+    expect(person.supplies).to eq({})
   end
 end
