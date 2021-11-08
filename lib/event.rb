@@ -28,4 +28,10 @@ class Event
     end
     attendees_by_interest
   end
+
+  def crafts_that_use(supply)
+    @crafts.select do |craft|
+      craft.supplies_required.keys.map {|key| key.to_s}.include?(supply)
+    end
+  end
 end
