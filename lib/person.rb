@@ -8,12 +8,13 @@ class Person
   end
 
   def add_supply(supply)
-    new_hash = {}
+    # new_hash = {}
     supply.map do  |key, value|
-      new_hash[key] = value
+      @supplies[key] = value
+      # new_hash[key] = value
+  #   end
+  #   new_hash.map do |key , value|
+  #     @supplies[key] = value += value
     end
-    new_hash.map do |key , value|
-      @supplies[key] = value += value
-    end 
   end
 end

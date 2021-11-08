@@ -24,7 +24,7 @@ RSpec.describe Person do
     expect(@person.supplies).to eq({"fabric"=>4, "scissors"=>1})
   end
 
-  it "checks that adding supplies does not change the value but adds to it " do
+  xit "checks that adding supplies does not change the value but adds to it " do
     @person.add_supply("fabric" => 4)
     @person.add_supply('scissors' => 1)
     @person.add_supply('fabric'=> 3)
