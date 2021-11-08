@@ -24,4 +24,16 @@ class Event
     supply_list = supply_list.map { |supply| supply.to_s }
   end
 
+  def attendees_by_craft_interest
+    attendees_by_craft_interest = {}
+    @crafts.each do |craft|
+      attendees_by_craft_interest[craft.name] = @attendees.find_all { |attendee| attendee.interests.include?(craft.name) }
+    end
+    attendees_by_craft_interest
+  end
+
+  def crafts_that_use(supply)
+    @crafts.find_all { |craft| craft.supplies_required.keys.include?(supply.to_sym) }
+  end
+
 end
