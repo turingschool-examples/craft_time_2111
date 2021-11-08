@@ -1,3 +1,6 @@
+require './lib/person'
+require './lib/craft'
+
 class Event
   attr_reader :name,
               :crafts,
@@ -13,5 +16,12 @@ class Event
     @attendees.map do |attendee|
       attendee.name
     end
+  end
+
+  def craft_with_most_supplies
+    most = @crafts.max_by do |craft|
+      craft.supplies_required.length
+    end
+    most.name
   end
 end
