@@ -8,4 +8,9 @@ class Person
     @supplies = {}
   end
 
+  def add_supply(supply_name, count)
+    @supplies[supply_name] ||= 0
+    @supplies[supply_name] += count
+  end
+
 end
