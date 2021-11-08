@@ -16,4 +16,8 @@ class Person
       @supplies[type] = quantity
     end
   end
+
+  def can_build?
+    
+  end
 end

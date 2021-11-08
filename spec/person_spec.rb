@@ -24,4 +24,26 @@ describe Person do
 
     expect(person.supplies).to eq({"fabric"=>7, "scissors"=>1})
   end
+end 
+
+describe 'iteration 2' do 
+  let(:event) {Event.new("Carla's Craft Connection", [sewing, knitting], [hector, toni])}
+  let(:hector) {Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})}
+  let(:toni) {Person.new({name: 'Toni', interests: ['sewing', 'knitting']})}
+  let(:sewing) {Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})}
+  let(:knitting) {Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})}
+  
+  it '#can build' do 
+    expect(hector.can_build?(sewing)).to be(false)
+
+    hector.add_supply('fabric', 7)
+    hector.add_supply('thread', 1)
+
+    expect(hector.can_build?(sewing)).to be(false)
+
+    hector.add_supply('scissors', 1)
+    hector.add_supply('sewing_needles', 1)
+
+    expect(hector.can_build?(sewing)).to be(true)
+  end
 end
