@@ -20,6 +20,14 @@ class Event
     end
   end
 
-
+  def supply_list
+    supplies = []
+    @crafts.each do |craft|
+      supplies.push(craft.supplies_required.keys)
+    end
+      supplies.flatten.uniq.map do |supply|
+        supply.to_s
+    end
+  end
 
 end
