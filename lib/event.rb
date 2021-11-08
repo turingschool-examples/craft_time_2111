@@ -16,4 +16,14 @@ class Event
     names = @attendees.map { |attendee| attendee.name }
   end
 
+  def craft_with_most_supplies
+     result = @crafts.max_by do |craft|
+       craft.supplies_required.size
+     end
+     result.name
+  end
+
+  def supply_list
+  end
+
 end
