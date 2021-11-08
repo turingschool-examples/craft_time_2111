@@ -4,9 +4,11 @@ require './lib/event'
 
 describe Event do
   before(:each) do
-    @person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
-    @craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
-    @event = Event.new("Carla's Craft Connection", [@craft], [@person])
+    @hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    @toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
+    @knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+    @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+    @event = Event.new("Carla's Craft Connection", [@knitting, @sewing], [@hector, @toni])
   end
 
   describe '#initialize' do
@@ -19,11 +21,17 @@ describe Event do
     end
 
     it 'has crafts' do
-      expect(@event.crafts).to eq([@craft])
+      expect(@event.crafts).to eq([@knitting, @sewing])
     end
 
     it 'has attendees' do
-      expect(@event.attendees).to eq([@person])
+      expect(@event.attendees).to eq([@hector, @toni])
+    end
+  end
+
+  describe '#attendee_names' do
+    it 'lists attendee names' do
+      expect(@event.attendee_names).to eq(["Hector", "Toni"])
     end
   end
 end
