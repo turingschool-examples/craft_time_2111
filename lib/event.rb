@@ -6,4 +6,6 @@ class Event
     @crafts = craft
     @attendees = person
   end
+
+
 end
