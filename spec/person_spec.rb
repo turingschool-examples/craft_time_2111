@@ -6,7 +6,7 @@ RSpec.describe do
     expect(person).to be_a(Person)
   end
 
-  xit 'has a name' do
+  it 'has a name' do
     person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
     expect(person.name).to eq('Hector')
   end

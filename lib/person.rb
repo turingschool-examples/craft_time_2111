@@ -1,3 +1,7 @@
 class Person
-  def initialize(attributes); end
+  attr_reader :name
+
+  def initialize(attributes)
+    @name = attributes[:name]
+  end
 end
