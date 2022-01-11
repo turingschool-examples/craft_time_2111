@@ -34,4 +34,18 @@ attr_reader :name, :crafts, :attendees
   end
   list.flatten.uniq
   end
+
+  def attendees_by_craft_interest
+    @attendees.each do |attendee|
+
+    end
+  end
+
+  def crafts_that_use(supply)
+    @crafts.find_all do |craft|
+      # require "pry"; binding.pry
+    craft.supplies_required.include?(supply.to_sym)
+  end
+  end
+
 end

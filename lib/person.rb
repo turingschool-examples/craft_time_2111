@@ -17,6 +17,8 @@ attr_reader :name, :interests, :supplies
   end
 
   def can_build?(craft)
-    false
+    craft.supplies_required.map do |key, value|
+       require "pry"; binding.pry
+    end
   end
 end

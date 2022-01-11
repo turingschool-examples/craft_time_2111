@@ -61,4 +61,19 @@ RSpec.describe Person do
     hector.add_supply('thread', 1)
     expect(hector.can_build?(sewing)).to eq(false)
   end
+
+  xit 'hector can build is true' do
+    sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+    knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    person.add_supply('fabric', 4)
+    person.add_supply('scissors', 1)
+    person.add_supply('fabric', 3)
+    hector.add_supply('fabric', 7)
+    hector.add_supply('thread', 1)
+    hector.add_supply('scissors', 1)
+    hector.add_supply('sewing_needles', 1)
+    expect(hector.can_build?(sewing)).to eq(true)
+  end
 end
