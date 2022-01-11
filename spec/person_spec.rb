@@ -18,8 +18,9 @@ RSpec.describe Person do
     expect(person.interests).to eq(["sewing", "millinery", "drawing"])
   end
 
-  it 'has interests' do
+  it 'has supplies is an empty array' do
     person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
     expect(person.supplies).to eq({})
   end
+
 end
