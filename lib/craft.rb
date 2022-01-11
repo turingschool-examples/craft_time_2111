@@ -1,7 +1,7 @@
 class Craft
-  attr_reader :name
-  def initialize(name, supplies_needed_hash)
+  attr_reader :name, :supplies_required
+  def initialize(name, supplies_required_hash)
     @name = name
-    @supplies_needed_hash = supplies_needed_hash
+    @supplies_required = supplies_required_hash
   end
 end
