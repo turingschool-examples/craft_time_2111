@@ -11,6 +11,14 @@ class Event
     @attendees.map do |attendee|
       attendee.name
     end
-    #binding.pry
+  end
+
+  def craft_with_most_supplies
+     max_craft = @crafts.max_by do |craft|
+      craft.supplies_required.count
+    end
+    max_craft.name
+
+
   end
 end
