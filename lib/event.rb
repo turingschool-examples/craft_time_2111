@@ -56,5 +56,7 @@ class Event
     end
   end
 
+  def assign_attendees_to_crafts
+  end
 
 end
