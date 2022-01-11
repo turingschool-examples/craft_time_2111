@@ -15,4 +15,8 @@ attr_reader :name, :interests, :supplies
     @supplies[supply] += amount
     end
   end
+
+  def can_build?(craft)
+    false
+  end
 end
