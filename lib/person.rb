@@ -7,7 +7,7 @@ class Person
     @supplies = {}
   end
 
-
+  
 
 
 
