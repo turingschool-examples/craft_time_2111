@@ -16,4 +16,16 @@ RSpec.describe Event do
   it 'is an instance of Event' do
     expect(@event).to be_instance_of(Event)
   end
+
+  it 'can access Even name' do
+    expect(@event.name).to eq("Carla's Craft Connection")
+  end
+
+  it 'can list crafts in a given event' do
+    expect(@event.crafts).to eq([@sewing, @knitting])
+  end
+
+  it 'can list attendees of a given event' do
+    expect(@event.attendees).to eq([@hector, @toni])
+  end
 end
