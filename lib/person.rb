@@ -5,4 +5,8 @@ class Person
     @interests = info[:interests]
     @supplies = {}
   end
+
+  def add_supply(key, value)
+    supplies[key] = value
+  end
 end
