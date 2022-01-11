@@ -27,5 +27,12 @@ require './lib/person'
 			expect(@person.supplies['fabric']).to eq 4
 			expect(@person.supplies['scissors']).to eq 1
 		end
+
+		it 'adding an existing item and qantity will add to the inventory count' do
+			@person.add_supply('fabric', 3)
+			expect(@person.supplies['fabric']).to eq 7
+			expect(@person.supplies['scissors']).to eq 1
+			expect(@person.supplies.count).to be 2
+		end
 	end
  end

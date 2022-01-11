@@ -5,10 +5,10 @@ class Person
 		@attributes = attributes
  		@name = attributes[:name]
  		@interests = attributes[:interests]
- 		@supplies = {}
+ 		@supplies = Hash.new { |hash, key| hash[key] = 0 }
  	end
 
 	def add_supply(item, quantity)
-		@supplies[item] = quantity
+		@supplies[item] += quantity
  end
 end
