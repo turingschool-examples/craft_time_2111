@@ -6,6 +6,6 @@ class Craft
   end
 
   def supplies_required
-    @info
+    @info.transform_keys(&:to_s)
   end
 end
