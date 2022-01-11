@@ -12,4 +12,10 @@ RSpec.describe Event do
   it 'exists' do
     expect(@event).to be_instance_of Event
   end
+
+  it 'has attributes' do
+    expect(@event.name).to eq("Carla's Craft Connection")
+    expect(@event.crafts).to eq([@craft])
+    expect(@event.attendees).to eq([@person])
+  end
 end
