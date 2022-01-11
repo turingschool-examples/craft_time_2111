@@ -14,4 +14,9 @@ class Event
       end
     return names
   end
+
+  def craft_with_most_supplies
+    @crafts[0].name
+  end
+
 end

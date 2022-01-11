@@ -23,5 +23,10 @@ let(:event) {Event.new("Carla's Craft Connection", [sewing, knitting], [hector, 
     expect(event.attendee_names).to eq(["Hector", "Toni"])
  end
 
+ it 'can return most supplies craft' do
+
+  expect(event.craft_with_most_supplies).to eq("sewing")
+ end
+
 
 end
