@@ -6,4 +6,10 @@ RSpec.describe Person do
     # binding.pry
     expect(person).to be_a(Person)
   end
+
+  it 'has a name' do
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    # binding.pry
+    expect(person.name).to eq("Hector")
+  end
 end
