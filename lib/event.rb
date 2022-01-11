@@ -7,7 +7,7 @@ class Event
     @attendees = attendees
   end
 
-
+  
 
 
 end
