@@ -4,6 +4,7 @@ class Craft
   def initialize(name, supplies)
     @name = name
     @supplies_required = supplies
-
   end
+
+
 end
