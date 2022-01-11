@@ -8,4 +8,5 @@ class Person
     @supplies = {}
   end
 
+  
 end
