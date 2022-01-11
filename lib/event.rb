@@ -5,4 +5,13 @@ class Event
     @crafts = craft
     @attendees = person
   end
+
+
+  def attendee_names
+    names = []
+      @attendees.each do |person|
+        names << person.name
+      end
+    return names
+  end
 end
