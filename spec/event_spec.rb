@@ -12,4 +12,8 @@ RSpec.describe Event do
     # binding.pry
     expect(@event).to be_a(Event)
   end
+
+  it 'has a name' do
+    expect(@event.name).to eq("Carla's Craft Connection")
+  end
 end
