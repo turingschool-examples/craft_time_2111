@@ -6,4 +6,8 @@ class Person
     @interests = @name_interests_hash[:interests]
     @supplies = {}
   end
+
+  def add_supply(supply, amount)
+    @supplies[supply] += amount
+  end
 end
