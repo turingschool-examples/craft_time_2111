@@ -9,6 +9,6 @@ RSpec.describe Craft do
   it 'has a name' do
     craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
     # binding.pry
-    expect(craft.name).to be_a("knitting")
+    expect(craft.name).to eq("knitting")
   end
 end
