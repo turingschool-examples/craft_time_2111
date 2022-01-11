@@ -28,4 +28,8 @@ RSpec.describe Event do
   it 'can list attendees of a given event' do
     expect(@event.attendees).to eq([@hector, @toni])
   end
+
+  it 'can return a list of attendee names as an array' do
+    expect(@event.attendee_names).to eq([@hector.name, @toni.name])
+  end
 end

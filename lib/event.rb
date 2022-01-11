@@ -7,4 +7,12 @@ class Event
     @crafts = crafts_array
     @attendees = persons_array
   end
+
+  def attendee_names
+    attendee_name_array = @attendees.map do |attendee|
+      attendee.name
+    end
+
+    attendee_name_array
+  end
 end
