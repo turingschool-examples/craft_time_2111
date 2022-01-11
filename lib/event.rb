@@ -17,4 +17,11 @@ class Event
     end
     names
   end
+
+  def craft_with_most_supplies
+    desired = crafts.max_by do |craft|
+      craft.supplies_required.count
+    end
+    desired.name
+  end
 end
