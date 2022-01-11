@@ -22,5 +22,13 @@ class Event
     end.uniq
   end
 
-  
+  def attendees_by_craft_interest
+    @crafts.reduce({}) do |acc, craft|
+      acc[craft.name] = @attendees.select do |person|
+        person.interests.include?(craft.name)
+      end
+    acc
+    end
+  end
+
 end
