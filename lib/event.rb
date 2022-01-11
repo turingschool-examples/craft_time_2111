@@ -1,3 +1,5 @@
+require 'pry'
+
 class Event
   attr_reader :name, :crafts, :attendees
 
@@ -11,7 +13,13 @@ class Event
     @attendees.map do |attendee|
       attendee.name
     end
+  end
 
+  def craft_with_most_supplies
+    craft = @crafts.max_by do |craft|
+      craft.number_of_supplies
+    end
+    craft.name
   end
 
 

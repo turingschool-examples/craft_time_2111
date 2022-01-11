@@ -24,7 +24,10 @@ RSpec.describe Event do
 
   it "shows attendees names" do
     expect(@event.attendee_names).to eq(["Hector", "Toni"])
+  end
 
+  it "show craft with most supplies" do
+    expect(@event.craft_with_most_supplies).to eq("sewing")
   end
 
 
