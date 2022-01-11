@@ -51,7 +51,7 @@ require './lib/person'
     it 'returns all the crafts that require given item' do
       expect(@event.crafts_that_use('scissors')).to eq [@sewing, @knitting]
     end
-    
+
     it 'returns an empty array if the item is not used by any craft' do
       expect(@event.crafts_that_use('fire')).to eq []
     end

@@ -38,4 +38,10 @@ class Event
       craft if craft.supplies_required.include?(item.to_sym)
 		end
 	end
+
+	def assign_attendees_to_crafts
+		@attendees.group_by do |attendee|
+      attendee.interests.select
+		end
+	end
  end
