@@ -25,4 +25,11 @@ RSpec.describe Person do
 
     expect(person.supplies).to eq({"fabric"=>7, "scissors"=>1})
   end
+
+  it 'can determine if Person is able to build a craft with current supplies' do
+    hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+
+    expect(hector.can_build?(sewing)).to be False
+  end
 end
