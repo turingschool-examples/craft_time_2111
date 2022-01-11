@@ -21,6 +21,17 @@ attr_reader :name, :crafts, :attendees
 
     end
     supply .name
-    
+
+  end
+
+  def supply_list
+    list = @crafts.map do |craft|
+      craft.supplies_required.keys.map do |supply|
+        # require "pry"; binding.pry
+        supply.to_s
+      end
+    # require "pry"; binding.pry
+  end
+  list.flatten.uniq
   end
 end
