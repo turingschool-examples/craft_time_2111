@@ -23,7 +23,13 @@ RSpec.describe do Event
     person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
     craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
     event = Event.new("Carla's Craft Connection", [craft], [person])
-    expect(event.crafs).to eq([craft])
+    expect(event.crafts).to eq([craft])
   end
 
+  it 'has attendees' do
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+    event = Event.new("Carla's Craft Connection", [craft], [person])
+    expect(event.attendees).to eq([person])
+  end
 end
