@@ -8,3 +8,4 @@ RSpec.describe Person do
   it 'exists' do
     expect(person).to be_a Person
   end
+end 
