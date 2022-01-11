@@ -23,4 +23,5 @@ RSpec.describe Event do
 
   it 'has array of attendees' do
     expect(@event.attendees).to eq([@person])
+  end
 end
