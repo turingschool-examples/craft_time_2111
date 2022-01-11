@@ -26,6 +26,24 @@ class Event
       craft.supplies_required.keys.map do |key|
         key.to_s
       end
-    end.flatten.uniq  
+    end.flatten.uniq
+  end
+
+  def attendees_by_craft_interest
+    craft_interest = Hash.new
+    @crafts.each do |craft|
+      if craft_interest[craft.name]
+        craft_interest = []
+      else
+        craft_interest[craft.name] = @attendees.select {|a| a.name if a.interests.include?(craft.name)}
+      end
+    end
+    craft_interest
+  end
+
+  def crafts_that_use(item)
+    @crafts.find_all do |craft|
+      craft.supplies_required.keys.to_s.include?(item)
+    end
   end
 end
