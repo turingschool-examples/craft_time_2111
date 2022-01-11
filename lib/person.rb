@@ -2,6 +2,7 @@ class Person
 
   def initialize(argument)
     @argument = argument
+    @supplies = {}
   end
 
   def name
@@ -10,5 +11,9 @@ class Person
 
   def interests
     @argument[:interests]
-  end 
+  end
+
+  def supplies
+    @supplies
+  end
 end
