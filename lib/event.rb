@@ -3,9 +3,14 @@ class Event
 
   def initialize(name, craft, person)
     @name = name
-    @crafts = craft
-    @attendees = person
+    @crafts = []
+    @attendees = []
+
+    @crafts << craft
+    @attendees << person
   end
 
-
+  def attendee_names
+    @attendees
+  end
 end

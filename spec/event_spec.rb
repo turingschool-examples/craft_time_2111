@@ -2,7 +2,7 @@ require './lib/event'
 require './lib/craft'
 require './lib/person'
 require 'rspec'
-
+require 'pry'
 RSpec.describe Event do
 
 context 'iteration I' do
@@ -27,7 +27,7 @@ context 'iteration I' do
     let(:event) {Event.new("Carla's Craft Connection", [sewing, knitting], [hector, toni])}
 
       it '#attendee_names' do
-
+# binding.pry
         expect(event.attendee_names).to eq(["Hector", "Toni"])
       end
   end
