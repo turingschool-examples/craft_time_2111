@@ -32,7 +32,7 @@ class Event
         supply_list.include?(item) ? next : supply_list << item.to_s
       end
     end
-    supply_list
+    supply_list.uniq
   end
 
   def attendees_by_craft_interest
