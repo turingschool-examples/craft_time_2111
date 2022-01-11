@@ -6,7 +6,7 @@ require 'RSpec'
 
 RSpec.describe Person do
   describe "this will test the Person class" do
-    it "checks the functionality" do
+    it "checks the initialize" do
       person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
       expect(person.name).to eq("Hector")
       expect(person.interests).to eq(['sewing', 'millinery', 'drawing'])
