@@ -15,4 +15,14 @@ class Event
     max = crafts.max_by { |craft| craft.supplies_required.count }
     max.name
   end
+
+  def supply_list
+    results = []
+    crafts.each do |craft|
+      craft.supplies_required.each_key do |supply|
+        results << supply.to_s
+      end
+    end
+    results.uniq
+  end
 end
