@@ -7,4 +7,7 @@ class Person
     @supplies = {}
   end
 
+  def add_supply(name, quantity)
+    @supplies[name]= quantity
+  end
 end
