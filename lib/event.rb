@@ -35,5 +35,20 @@ class Event
     supply_list
   end
 
+  def attendees_by_craft_interest
+    a_b_c_i = {}
+    @crafts.each do |craft|
+      if !a_b_c_i.has_key?(craft.name)
+        a_b_c_i[craft.name] = []
+      end
+      @attendees.each do |attendee|
+        if attendee.interests.include?(craft.name)
+          a_b_c_i[craft.name] << attendee
+        end
+      end 
+    end
+    a_b_c_i
+  end
+
 
 end
