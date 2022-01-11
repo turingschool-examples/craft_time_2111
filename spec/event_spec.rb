@@ -40,4 +40,8 @@ RSpec.describe do
 
     expect(event.attendees_by_craft_interest).to eq(expected)
   end
+
+  it "can sort by cafts that use" do
+    event.crafts_that_use('scissors').to eq([sewing, knitting])
+  end
 end
