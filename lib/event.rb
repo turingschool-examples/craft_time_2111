@@ -31,4 +31,9 @@ class Event
     end
   end
 
+  def crafts_that_use(supply)
+    @crafts.select do |craft|
+      craft.supplies_required.keys.to_s.include?(supply)
+    end
+  end
 end

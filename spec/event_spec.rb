@@ -1,6 +1,7 @@
 require './lib/person'
 require './lib/craft'
 require './lib/event'
+require 'pry'
 
 RSpec.describe do
   #let(:person) {Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})}
@@ -42,6 +43,6 @@ RSpec.describe do
   end
 
   it "can sort by cafts that use" do
-    event.crafts_that_use('scissors').to eq([sewing, knitting])
+    expect(event.crafts_that_use('scissors')).to eq([knitting, sewing])
   end
 end
