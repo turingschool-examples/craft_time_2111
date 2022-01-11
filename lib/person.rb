@@ -21,7 +21,6 @@ class Person
           arr << false
         end
       end
-      #binding.pry
       arr
     end
     arr.each do |boolean|
@@ -31,5 +30,4 @@ class Person
       end
     end
   end
-
 end

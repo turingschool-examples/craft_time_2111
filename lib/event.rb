@@ -21,4 +21,6 @@ class Event
       end
     end.uniq
   end
+
+  
 end
