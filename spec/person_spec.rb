@@ -8,4 +8,10 @@ RSpec.describe Person do
   it 'exists' do
     expect(person).to be_a Person
   end
-end 
+
+  it 'has attributes' do
+    expect(person.name).to eq("Hector")
+    expect(person.interests).to eq (["sewing", "millinery", "drawing"])
+    expect(person.supplies).to eq({})
+  end
+end
