@@ -13,4 +13,13 @@ class Person
     # require 'pry'; binding.pry
     @supplies[name] = @supplies[name] + qty
   end
+
+  def can_build?(craft)
+    a = craft.supplies_required.keys
+    b = a.map do |key|
+      key.to_s
+    end
+    (b - @supplies.keys).empty?
+    # p craft.supplies_required.keys
+  end
 end
