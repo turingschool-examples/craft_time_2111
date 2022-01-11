@@ -44,5 +44,6 @@ RSpec.describe do
 
   it "can sort by cafts that use" do
     expect(event.crafts_that_use('scissors')).to eq([knitting, sewing])
+    expect(event.crafts_that_use('fire')).to eq([])
   end
 end
