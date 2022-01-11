@@ -14,5 +14,11 @@ class Event
     ordered[-1].name
   end
 
-  
+  def supply_list
+    @crafts.flat_map do |craft|
+      craft.supplies_required.map do |supply, num|
+        "#{supply}"
+      end
+    end.uniq
+  end
 end

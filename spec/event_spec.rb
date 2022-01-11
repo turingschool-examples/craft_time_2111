@@ -26,6 +26,6 @@ RSpec.describe do
   end
 
   it "can return a supply list" do
-    expect(event.supply_list).to eq([["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"]])
+    expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 end
