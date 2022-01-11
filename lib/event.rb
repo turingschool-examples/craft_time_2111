@@ -14,5 +14,5 @@ class Event
     ordered[-1].name
   end
 
-
+  
 end
