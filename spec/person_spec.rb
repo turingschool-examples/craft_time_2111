@@ -10,7 +10,7 @@ RSpec.describe do Person
 
   it 'has a name' do
     person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
-    expect(person.name).to eq(Hector)
+    expect(person.name).to eq('Hector')
   end
 
   it 'has interests' do
