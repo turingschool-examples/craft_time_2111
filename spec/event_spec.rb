@@ -30,4 +30,5 @@ RSpec.describe Event do
     event = Event.new("Carla's Craft Connection", [craft], [person])
     expect(event.attendees).to eq([person])
   end
+
 end
