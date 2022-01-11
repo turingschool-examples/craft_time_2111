@@ -19,5 +19,11 @@ RSpec.describe Person do
     expect(person.interests).to eq(["sewing", "millinery", "drawing"])
   end
 
+  it 'has empty hash of supplies' do
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    # binding.pry
+    expect(person.supplies).to eq({})
+  end
+
 
 end
