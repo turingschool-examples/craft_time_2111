@@ -8,4 +8,12 @@ class Person
     @interests = info[:interests]
     @supplies = {}
   end
+
+  def add_supply(supply, quantity)
+    if @supplies[supply].nil?
+      @supplies[supply] = quantity
+    else
+      @supplies[supply] += quantity
+    end
+  end
 end

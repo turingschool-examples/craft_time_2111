@@ -3,8 +3,6 @@ class Event
               :crafts,
               :attendees
 
-
-
   def initialize(name, crafts, person)
     @name = name
     @crafts = crafts
