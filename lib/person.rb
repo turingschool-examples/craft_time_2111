@@ -11,4 +11,10 @@ class Person
 	def add_supply(item, quantity)
 		@supplies[item] += quantity
  end
+
+ def can_build?(craft)
+	 craft.supplies_required.all? do |item|
+    @supplies.include?(item)
+	 end
+ end
 end

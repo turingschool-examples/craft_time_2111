@@ -20,8 +20,4 @@ class Event
       craft.supplies_required.keys.map(&:to_s)
 		end.flatten.uniq
 	end
-
-	# def tally_required_supplies
-	# 	@crafts.group_by { |craft| craft.supplies_required.values.sum }
-	# end
  end
