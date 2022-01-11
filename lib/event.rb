@@ -45,9 +45,15 @@ class Event
         if attendee.interests.include?(craft.name)
           a_b_c_i[craft.name] << attendee
         end
-      end 
+      end
     end
     a_b_c_i
+  end
+
+  def crafts_that_use(item)
+    @crafts.select do |craft|
+      craft.supplies_required.keys.to_s.include?(item)
+    end
   end
 
 
