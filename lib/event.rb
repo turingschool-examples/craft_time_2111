@@ -5,5 +5,7 @@ attr_reader :name, :crafts, :attendees
     @name = name
     @crafts = crafts
     @attendees = attendees
+
+
   end
 end
