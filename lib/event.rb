@@ -18,7 +18,8 @@ class Event
       craft.supplies_required.count
     end
     max_craft.name
+  end
 
-
+  def supply_list
   end
 end
