@@ -13,8 +13,8 @@ class Person
  end
 
  def can_build?(craft)
-	 craft.supplies_required.all? do |item|
-    @supplies.include?(item)
+	 craft.supplies_required.all? do |item, quantity|
+    @supplies[item.to_s] >= quantity
 	 end
  end
 end

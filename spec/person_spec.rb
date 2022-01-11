@@ -35,4 +35,27 @@ require './lib/person'
 			expect(@person.supplies.count).to be 2
 		end
 	end
+
+	describe '#can_build?' do
+    before(:each) do
+			@sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+			@person.add_supply('fabric', 7)
+			@person.add_supply('thread', 1)
+			# @person.can_build?(sewing)
+			#
+			#
+
+		end
+
+		it 'returns false if the inidividual does not have the required supplies' do
+			# expect(@person.can_build?(@sewing)).to be false
+		end
+
+		it 'returns true if the inidividual does not have the required supplies' do
+			@person.add_supply('scissors', 1)
+			@person.add_supply('sewing_needles', 1)
+
+			expect(@person.can_build?(@sewing)).to be true
+		end
+	end
  end
