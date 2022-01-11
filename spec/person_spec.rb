@@ -1,4 +1,4 @@
-'./lib/person'
+require './lib/person'
 RSpec.describe Person do
 
   it "exists" do
@@ -18,3 +18,4 @@ RSpec.describe Person do
 
     expect(person.interests).to eq(["sewing", "millinery", "drawing"])
   end
+end
