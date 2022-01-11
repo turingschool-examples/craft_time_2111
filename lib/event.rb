@@ -35,6 +35,13 @@ class Event
       end
     end
     interest_hash
-    # require "pry"; binding.pry
+  end
+
+  def crafts_that_use(tool)
+    crafts = []
+    @crafts.each do |craft|
+      crafts << craft if craft.supplies.keys.include?(tool.to_sym)
+    end
+    crafts
   end
 end
