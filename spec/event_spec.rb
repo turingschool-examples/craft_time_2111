@@ -4,10 +4,13 @@ require './lib/person'
 
  RSpec.describe Event do
  	before(:each) do
-		person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
-		craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+		hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
 
- 		@event = Event.new("Carla's Craft Connection", [craft], [person])
+    sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
+    knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+
+    @event = Event.new("Carla's Craft Connection", [sewing, knitting], [hector, toni])
  	end
 
  	it 'is initialized with a name, an array of craft objects, an array of people objects.' do
@@ -16,4 +19,17 @@ require './lib/person'
  		expect(@event.crafts).to be_instance_of Array
  		expect(@event.attendees).to be_instance_of Array
  	end
+
+	it 'can return an array of all the names of the attendees' do
+    expect(@event.attendee_names).to be_instance_of Array
+    expect(@event.attendee_names).to eq ["Hector", "Toni"]
+	end
+
+	it 'can return the name of the craft with the largest total quantity of supplies' do
+		expect(@event.craft_with_most_supplies).to eq 'sewing'
+	end
+
+	it 'can return an array of all the supplies required for all the crafts in the event' do
+		expect(@event.supply_list).to eq ["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"]
+	end
  end
