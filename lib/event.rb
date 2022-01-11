@@ -4,6 +4,6 @@ class Event
   def initialize(name, crafts, person)
     @name = name
     @crafts = crafts
-    @person = person
+    @attendees = person
   end
 end
