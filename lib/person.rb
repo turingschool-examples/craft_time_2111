@@ -1,4 +1,5 @@
 class Person
+attr_reader :supplies
 
   def initialize(argument)
     @argument = argument
@@ -13,7 +14,7 @@ class Person
     @argument[:interests]
   end
 
-  def supplies
-    @supplies
-  end
+  # def supplies
+  #   @supplies
+  # end
 end

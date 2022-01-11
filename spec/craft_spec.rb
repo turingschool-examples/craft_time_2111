@@ -2,7 +2,7 @@ require './lib/person'
 require './lib/craft'
 require './lib/event'
 
-RSpec. describe do Craft
+RSpec.describe do Craft
 
   it 'craft class exists' do
     craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
