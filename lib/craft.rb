@@ -13,6 +13,6 @@ class Craft
   end
 
   def supplies_required
-    @supplies 
+    @supplies
   end
 end
