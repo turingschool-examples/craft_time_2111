@@ -33,4 +33,8 @@ class Event
     end
     result.uniq
   end
+
+  # def can_build?(craft)
+  #   require "pry"; binding.pry
+  # end
 end
