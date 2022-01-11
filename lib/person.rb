@@ -11,5 +11,9 @@ class Person
     @supplies[supply] += amount
   end
 
+  def can_build?(craft)
+    craft.supplies_required
+  end
+
 
 end

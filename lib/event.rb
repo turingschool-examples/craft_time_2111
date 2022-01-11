@@ -31,7 +31,6 @@ class Event
     supplies_array.flatten.uniq.map do |supply|
       supply.to_s
     end
-
   end
 
 
