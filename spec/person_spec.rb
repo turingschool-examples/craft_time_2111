@@ -10,4 +10,11 @@ RSpec.describe Person do
   it 'exists' do
     expect(@person).to be_instance_of Person
   end
+
+  it 'has attributes' do
+    expect(@person.name).to eq('Hector')
+    expect(@person.interests).to eq(['sewing', 'millinery', 'drawing'])
+  end
+
+
 end
