@@ -19,7 +19,7 @@ class Event
   def craft_with_most_supplies
     craft_supplies = []
     @crafts.each do |craft|
-      craft_supplies << craft.required_supplies.keys.size
+      craft_supplies << craft.supplies_required.keys.size
     end
     most_supplies = craft_supplies.max
     craft_with_most_supplies = craft_supplies.rindex(most_supplies)
@@ -30,7 +30,7 @@ class Event
     supply_list = []
     supply_list_strings = []
     @crafts.each do |craft|
-      supply_list << craft.required_supplies.keys
+      supply_list << craft.supplies_required.keys
     end
     supply_list.flatten!
     supply_list.uniq!

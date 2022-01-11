@@ -7,15 +7,15 @@ RSpec.describe Person do
     @sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
   end
 
-  it 'is an instance of Person' do
+  it 'iexists' do
     expect(@person).to be_instance_of(Person)
   end
 
-  it 'can access name from inputted hash' do
+  it 'can access name' do
     expect(@person.name).to eq("Hector")
   end
 
-  it 'can access interests array' do
+  it 'can access interests' do
     expected_array = ["sewing", "millinery", "drawing"]
     expect(@person.interests).to eq(expected_array)
   end
@@ -30,5 +30,11 @@ RSpec.describe Person do
    @person.add_supply('fabric', 3)
 
    expect(@person.supplies).to eq({"fabric" => 7, "scissors" => 1})
+ end
+
+ it 'can #can_build a given craft (false)' do
+   @person.add_supply('fabric', 7)
+   @person.add_supply('thread', 1)
+   expect(@person.can_build?(@sewing)).to be false
  end
 end

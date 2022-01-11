@@ -1,10 +1,10 @@
 class Craft
 
-  attr_reader :name, :required_supplies
+  attr_reader :name, :supplies_required
 
-  def initialize(craft_name, required_supplies)
+  def initialize(craft_name, supplies_required)
     @name = craft_name
-    @required_supplies = required_supplies
+    @supplies_required = supplies_required
   end
 
 end

@@ -14,5 +14,9 @@ class Person
    else
      @supplies[supply_key] = @supplies[supply_key] + supply_value
    end
+
+   def can_build?(craft)
+     @supplies.include?(craft.supplies_required)
+   end
  end
 end

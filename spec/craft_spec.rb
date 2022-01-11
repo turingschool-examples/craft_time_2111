@@ -6,7 +6,7 @@ RSpec.describe Craft do
     @craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
   end
 
-  it 'is an instance of Craft' do
+  it 'exists' do
     expect(@craft).to be_instance_of(Craft)
   end
 
@@ -16,7 +16,7 @@ RSpec.describe Craft do
 
   it 'can return required supplies for craft' do
     expected_hash = {yarn: 20, scissors: 1, knitting_needles: 2}
-    expect(@craft.required_supplies).to eq(expected_hash)
+    expect(@craft.supplies_required).to eq(expected_hash)
   end
 
 end

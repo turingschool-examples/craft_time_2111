@@ -18,7 +18,7 @@ RSpec.describe Event do
     expect(@event).to be_instance_of(Event)
   end
 
-  it 'can acall event name' do
+  it 'can call event name' do
     expect(@event.name).to eq("Carla's Craft Connection")
   end
 
