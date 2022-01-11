@@ -44,4 +44,19 @@ class Event
     end
     crafts
   end
+
+  def assign_attendees_to_crafts
+    attendees_by_craft = Hash.new { |hash, key| hash[key] = [] }
+    @crafts.each {|craft| attendees_by_craft[craft] = [] }
+    @attendees.each do |person|
+      @crafts.each do |craft|
+        attendees_by_craft[craft] << person if person.can_build?(craft) == true
+      end
+    end
+    random_attendees = Hash.new { |hash, key| hash[key] = [] }
+    attendees_by_craft.each_pair do |craft, attendees|
+      random_attendees[craft] = attendees.sample
+    end
+    random_attendees
+  end
 end
