@@ -10,8 +10,9 @@ RSpec.describe Person do
       expect(person).to be_a(Person)
     end
 
-
-
+    it "has attributes" do
+      expect(person.name).to eq('Hector')      
+    end
 
 
 

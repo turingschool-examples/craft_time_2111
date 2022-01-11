@@ -1,7 +1,8 @@
 class Person
+  attr_reader :name
 
-  def initialize(argument)
-    @argument = argument
+  def initialize(info)
+    @name = info[:name]
   end
 
 
