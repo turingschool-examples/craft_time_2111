@@ -1,4 +1,6 @@
 require './lib/person'
+require './lib/craft'
+require './lib/event'
 
 RSpec.describe do
   it 'exists' do

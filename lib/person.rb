@@ -10,4 +10,8 @@ class Person
   def add_supply(name, count)
     supplies[name] += count
   end
+
+  def can_build?(craft)
+    supplies == craft.supplies_required
+  end
 end
