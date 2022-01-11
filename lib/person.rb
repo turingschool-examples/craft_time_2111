@@ -7,4 +7,8 @@ class Person
   def name
     @argument[:name]
   end
+
+  def interests
+    @argument[:interests]
+  end 
 end
