@@ -1,6 +1,7 @@
 require './lib/person'
 require './lib/craft'
 require './lib/event'
+require 'pry'
 
 RSpec.describe Event do
   before(:each) do
@@ -31,5 +32,10 @@ RSpec.describe Event do
 
   it 'can return a list of attendee names as an array' do
     expect(@event.attendee_names).to eq([@hector.name, @toni.name])
+  end
+
+  it 'shows which craft at the event has the most supplies' do
+
+    expect(@event.craft_with_most_supplies).to eq("sewing")
   end
 end

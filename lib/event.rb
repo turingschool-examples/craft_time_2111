@@ -15,4 +15,15 @@ class Event
 
     attendee_name_array
   end
+
+  def craft_with_most_supplies
+    craft_supplies = []
+    @crafts.each do |craft|
+      craft_supplies << craft.required_supplies.keys.size
+    end
+    most_supplies = craft_supplies.max
+    craft_with_most_supplies = craft_supplies.rindex(most_supplies)
+    craft_name = @crafts[craft_with_most_supplies].name
+    binding.pry
+  end
 end
