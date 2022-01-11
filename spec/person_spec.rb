@@ -12,4 +12,12 @@ RSpec.describe Person do
     # binding.pry
     expect(person.name).to eq("Hector")
   end
+
+  it 'has interests' do
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    # binding.pry
+    expect(person.interests).to eq(["sewing", "millinery", "drawing"])
+  end
+
+
 end
