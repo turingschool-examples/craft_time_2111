@@ -40,4 +40,15 @@ class Event
     supply_list_strings
     # binding.pry
   end
+
+  def attendees_by_craft_interest
+    person_craft = {}
+    @crafts.each do |craft|
+      if !person_craft.has_key?(craft.name)
+        person_craft[craft.name] = []
+      end
+      binding.pry
+    end
+
+  end
 end

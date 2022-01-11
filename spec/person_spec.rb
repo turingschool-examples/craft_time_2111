@@ -37,4 +37,10 @@ RSpec.describe Person do
    @person.add_supply('thread', 1)
    expect(@person.can_build?(@sewing)).to be false
  end
+
+ xit 'can #can_build a given craft (true)' do
+   @person.add_supply('scissors', 1)
+   @person.add_supply('sewing_needles', 1)
+   expect(@person.can_build?(@sewing)).to be true
+ end
 end
