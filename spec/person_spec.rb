@@ -18,10 +18,10 @@ RSpec.describe Person do
       expect(person.name).to eq("Hector")
     end
 
-    xit 'exists' do
+    it 'can read interests' do
       person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
 
-      expect(person).to be_a(Person)
+      expect(person.intersts).to eq(["sewing", "millinery", "drawing"])
     end
   end
 end
