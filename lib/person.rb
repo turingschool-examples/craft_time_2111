@@ -17,8 +17,13 @@ attr_reader :name, :interests, :supplies
   end
 
   def can_build?(craft)
-    craft.supplies_required.map do |key, value|
-       require "pry"; binding.pry
-    end
+    craft.supplies_required.flat_map do |key, value|
+       # require "pry"; binding.pry
+       if @supplies.keys.include?(craft) == false
+         false
+       else
+         true
+       end
+    end.uniq.flatten
   end
 end

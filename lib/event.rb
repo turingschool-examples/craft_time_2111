@@ -35,10 +35,23 @@ attr_reader :name, :crafts, :attendees
   list.flatten.uniq
   end
 
-  def attendees_by_craft_interest
-    @attendees.each do |attendee|
+  def attendees_by_interests(craft)
+    # craft.supplies_required.map do |craft|
+    # require "pry"; binding.pry
+    @attendees.find_all do |attendee|
+    attendee.interests.include?(craft.name)
+  end
+  end
 
-    end
+
+  def attendees_by_craft_interest
+    result = Hash.new
+    @crafts.map do |craft|
+      # if result[craft.name].nil?
+        result[craft.name] = attendees_by_interests(craft)
+      # end
+      end
+      result
   end
 
   def crafts_that_use(supply)

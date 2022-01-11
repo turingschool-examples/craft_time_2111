@@ -62,7 +62,7 @@ RSpec.describe Person do
     expect(hector.can_build?(sewing)).to eq(false)
   end
 
-  xit 'hector can build is true' do
+  it 'hector can build is true' do
     sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
     knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
     person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
