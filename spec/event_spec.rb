@@ -18,19 +18,19 @@ RSpec.describe Event do
     expect(@event).to be_instance_of(Event)
   end
 
-  it 'can access Even name' do
+  it 'can acall event name' do
     expect(@event.name).to eq("Carla's Craft Connection")
   end
 
-  it 'can list crafts in a given event' do
+  it 'can list crafts' do
     expect(@event.crafts).to eq([@sewing, @knitting])
   end
 
-  it 'can list attendees of a given event' do
+  it 'can list attendees' do
     expect(@event.attendees).to eq([@hector, @toni])
   end
 
-  it 'can return a list of attendee names as an array' do
+  it 'can return a list of attendee names' do
     expect(@event.attendee_names).to eq([@hector.name, @toni.name])
   end
 
@@ -38,4 +38,10 @@ RSpec.describe Event do
 
     expect(@event.craft_with_most_supplies).to eq("sewing")
   end
+
+  it 'can list supplies' do
+
+    expect(@event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
+  end
+
 end

@@ -24,6 +24,20 @@ class Event
     most_supplies = craft_supplies.max
     craft_with_most_supplies = craft_supplies.rindex(most_supplies)
     craft_name = @crafts[craft_with_most_supplies].name
-    binding.pry
+  end
+
+  def supply_list
+    supply_list = []
+    supply_list_strings = []
+    @crafts.each do |craft|
+      supply_list << craft.required_supplies.keys
+    end
+    supply_list.flatten!
+    supply_list.uniq!
+    supply_list.each do |supply|
+      supply_list_strings << supply.to_s
+    end
+    supply_list_strings
+    # binding.pry
   end
 end
