@@ -16,5 +16,10 @@ class Event
   end.uniq.flatten
 end
 
+  def craft_with_most_supplies
+    @attendees.each do |person|
+      person.supplies 
+  end
+
 
 end
