@@ -1,6 +1,7 @@
 require './lib/event'
+require './lib/person'
 
-descirbe Event do
+describe Event do
   before(:each) do
     @person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
     @craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})

@@ -1,4 +1,5 @@
 require './lib/person'
+require './lib/craft'
 
 describe Person do
   before(:each) do
@@ -16,8 +17,8 @@ describe Person do
     end
 
     it 'can add supplies' do
-      person.add_supply('fabric', 4)
-      person.add_supply('scissors', 1)
+      @person.add_supply('fabric', 4)
+      @person.add_supply('scissors', 1)
     end
   end
 end
