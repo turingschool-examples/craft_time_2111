@@ -4,11 +4,12 @@ require './lib/person'
 require './lib/craft'
 require './lib/event'
 
-RSpec.describe Person do
+RSpec.describe Craft do
   describe '#iteration 1' do
     it 'exists' do
-      person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+      craft = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
 
-    expect(person).to be_a (
+      expect(craft).to be_a(Craft)
+    end
   end
 end
