@@ -3,7 +3,7 @@ class Person
               :interests,
               :supplies
 
-  def initialize(hash)#refactor argument name?
+  def initialize(hash)
     @name      = hash[:name]
     @interests = hash[:interests]
     @supplies  = Hash.new { |hash, key| hash[key] = 0 }
