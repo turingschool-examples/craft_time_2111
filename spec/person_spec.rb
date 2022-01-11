@@ -41,14 +41,10 @@ require './lib/person'
 			@sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1, sewing_needles: 1})
 			@person.add_supply('fabric', 7)
 			@person.add_supply('thread', 1)
-			# @person.can_build?(sewing)
-			#
-			#
-
 		end
 
 		it 'returns false if the inidividual does not have the required supplies' do
-			# expect(@person.can_build?(@sewing)).to be false
+			expect(@person.can_build?(@sewing)).to be false
 		end
 
 		it 'returns true if the inidividual does not have the required supplies' do
