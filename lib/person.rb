@@ -12,7 +12,7 @@ attr_reader :name, :interests, :supplies
     @supplies[supply] = amount
     # require "pry"; binding.pry
     else
-    @supplies[supply] = amount
+    @supplies[supply] += amount
     end
   end
 end
