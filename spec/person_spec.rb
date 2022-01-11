@@ -12,5 +12,6 @@ RSpec.describe Person do
       expect(person.interests).to eq(['sewing', 'millinery', 'drawing'])
       expect(person.supplies).to eq({})
     end
+
   end
 end
