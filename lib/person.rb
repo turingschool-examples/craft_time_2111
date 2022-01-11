@@ -1,10 +1,11 @@
 require 'pry'
 
 class Person
-  attr_reader :data, :person_name, :interests
+  attr_reader :data, :person_name, :interests, :supplies
 
   def initialize(data)
     @data = data
+    @supplies = {}
     # @person_name = []
   end
 
