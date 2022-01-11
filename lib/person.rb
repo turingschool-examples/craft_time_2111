@@ -8,5 +8,12 @@ class Person
     @supplies = {}
   end
 
-  
+  def add_supply(item, qty)
+    if !@supplies.has_key?(item)
+      @supplies[item] = qty
+    else
+      @supplies[item] += qty
+    end
+  end
+
 end
