@@ -8,6 +8,10 @@ class Person
   end
 
   def add_supply(name, quantity)
-    @supplies[name]= quantity
+    if @supplies.key?(name) == false
+      @supplies[name]= quantity
+    else @supplies.key?(name) == true
+      @supplies[name] += quantity
+    end
   end
 end
