@@ -4,7 +4,7 @@ class Person
     @name_interests_hash = name_interests_hash
     @name = @name_interests_hash[:name]
     @interests = @name_interests_hash[:interests]
-    @supplies = {}
+    @supplies = Hash.new(0)
   end
 
   def add_supply(supply, amount)
