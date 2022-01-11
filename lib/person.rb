@@ -14,4 +14,13 @@ class Person
       @supplies[name] += quantity
     end
   end
+
+  def can_build?(craft)
+    binding.pry
+    if craft.supplies_required == @supplies
+      true
+    else
+      false
+    end
+  end
 end
