@@ -1,0 +1,3 @@
+class Person
+  d
+end
