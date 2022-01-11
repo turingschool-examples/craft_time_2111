@@ -7,4 +7,8 @@ class Craft
     @data = data
     @supplies = supplies
   end
+
+  def name
+    @data
+  end
 end
