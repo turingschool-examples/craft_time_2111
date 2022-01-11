@@ -9,7 +9,19 @@ RSpec.describe Person do
     it 'exists' do
       person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
 
+      expect(person).to be_a Person
+    end
+
+    it 'can read a name' do
+      person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+
+      expect(person.name).to eq("Hector")
+    end
+
+    xit 'exists' do
+      person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+
       expect(person).to be_a(Person)
-    end 
+    end
   end
 end
