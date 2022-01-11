@@ -1,7 +1,11 @@
 class Craft
-  attr_reader :name, :supplies_required
-  def initialize(name, supplies_required)
+  attr_reader :name
+  def initialize(name, info)
     @name = name
-    @supplies_required = supplies_required[:supplies_required]
+    @info = info
+  end
+
+  def supplies_required
+    @info
   end
 end
