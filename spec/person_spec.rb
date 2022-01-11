@@ -1,6 +1,6 @@
 require './lib/person'
 
-RSpec.describe StatTracker do
+RSpec.describe Person do
   it 'exists' do
     person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
 
