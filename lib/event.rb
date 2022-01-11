@@ -9,5 +9,12 @@ class Event
     @attendees = person
   end
 
+  def attendee_names
+    names = []
+    @attendees.map do |person|
+      names << person.name
+  end.uniq.flatten
+end
+
 
 end
