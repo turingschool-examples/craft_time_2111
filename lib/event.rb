@@ -24,4 +24,13 @@ class Event
     end
     desired.name
   end
+
+  def supply_list
+    result = crafts.flat_map do |craft|
+      craft.supplies_required.flat_map do |supply|
+        supply.first.to_s
+      end
+    end
+    result.uniq
+  end
 end
