@@ -4,7 +4,12 @@ class Person
   def initialize(hash)
     @name = hash[:name]
     @interests = hash[:interests]
-    @supplies = {}
+    @supplies = Hash.new { |h, k| h[k] = 0 }
+  end
+
+  def add_supply(name, quantity)
+    @supplies[name] += quantity 
+
   end
 
 end
