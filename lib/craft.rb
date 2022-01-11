@@ -8,7 +8,11 @@ class Craft
     @supplies = supplies
   end
 
-  def name
+  def name # feel like this should be read by parent class
     @data
+  end
+
+  def supplies_required
+    @supplies 
   end
 end

@@ -1,7 +1,7 @@
 require 'pry'
 
 class Person
-  attr_reader :data, :person_name, :supplies
+  attr_reader :data, :person_name, :interests, :supplies
 
   def initialize(data)
     @data = data
