@@ -17,6 +17,17 @@ class Person
   end
 
   def can_build?(craft)
-    @supplies.include?(craft.supplies_required)
+    can_build = nil
+    supplies_required_strings = {}
+    craft.supplies_required.each_pair do |key, value|
+      supplies_required_strings[key.to_s] = value
+    end
+    supplies_required_strings.each_pair do |key, value|
+      @supplies.keys.include?(key) ? can_build = true : can_build = false
+      @supplies.each_pair do |k, v|
+        (k == key) && (v >= value) ? can_build = true : can_build = false
+      end
+    end
+    can_build
   end
 end
