@@ -11,7 +11,7 @@ RSpec.describe do
     expect(person.name).to eq('Hector')
   end
 
-  xit 'interests' do
+  it 'interests' do
     person = Person.new({ name: 'Hector', interests: %w[sewing millinery drawing] })
     expect(person.interests).to eq(%w[sewing millinery drawing])
   end
