@@ -22,5 +22,17 @@ class Event
     craft.name
   end
 
+  def supply_list
+    supplies_array = []
+    supplies = @crafts.each do |craft|
+      supplies_array << craft.supplies_required.keys
+    end
+
+    supplies_array.flatten.uniq.map do |supply|
+      supply.to_s
+    end
+
+  end
+
 
 end
