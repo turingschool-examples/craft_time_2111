@@ -11,5 +11,9 @@ class Person
   def name
     @data.values.first
   end
+
+  def interests
+    @data.values.last
+  end
 end
 # end

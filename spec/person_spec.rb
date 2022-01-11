@@ -21,7 +21,7 @@ RSpec.describe Person do
     it 'can read interests' do
       person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
 
-      expect(person.intersts).to eq(["sewing", "millinery", "drawing"])
+      expect(person.interests).to eq(["sewing", "millinery", "drawing"])
     end
   end
 end
