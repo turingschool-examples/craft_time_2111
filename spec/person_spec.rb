@@ -7,10 +7,11 @@ RSpec.describe Person do
 
   context 'iteration I' do
 
-    it 'exists and in instantiated with an attributes hash'
+    it 'exists and in instantiated with an attributes hash' do
 
     expect(person.name).to eq('Hector')
     expect(person.interests).to eq(["sewing", "millinery", "drawing"])
     expect(person.supplies).to eq({})
   end
+end
 end
