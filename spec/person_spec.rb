@@ -25,5 +25,13 @@ RSpec.describe Person do
     expect(person.supplies).to eq({})
   end
 
+  it 'can add supplies to hash' do
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    # binding.pry
+    person.add_supply('fabric', 4)
+    person.add_supply('scissors', 1)
+    expect(person.supplies).to eq({"fabric"=>4, "scissors"=>1})
+  end
+
 
 end
