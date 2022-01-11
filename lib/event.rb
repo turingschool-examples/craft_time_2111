@@ -13,4 +13,14 @@ attr_reader :name, :crafts, :attendees
       attendee.name
     end
   end
+
+  def craft_with_most_supplies
+    supply = @crafts.find do |craft|
+      # require "pry"; binding.pry
+      craft.supplies_required.length
+
+    end
+    supply .name
+    
+  end
 end
