@@ -35,4 +35,8 @@ RSpec.describe Event do
     expect(event.attendee_names).to eq(["Hector", "Toni"])
   end
 
+  it 'can calculate the craft with most supplies' do
+    expect(event.craft_with_most_supplies),to eq("sewing")
+  end
+
 end
