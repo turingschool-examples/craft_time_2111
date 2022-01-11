@@ -51,7 +51,7 @@ RSpec.describe Event do
     expect(event.supply_list).to eq(["fabric", "scissors", "thread", "sewing_needles", "yarn", "knitting_needles"])
   end
 
-  xit 'can group attendess by craft interests' do
+  it 'can group attendess by craft interests' do
     hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
     toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
     tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
@@ -77,5 +77,18 @@ RSpec.describe Event do
       event = Event.new("Carla's Craft Connection", [knitting, painting, sewing], [hector, toni, tony])
 
       expect(event.attendees_interested_in_certain_craft(knitting)).to eq([toni, tony])
+    end
+
+    it 'can find craft that uses certain supplies' do
+      hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+      toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
+      tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
+      knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
+      sewing = Craft.new('sewing', {fabric: 5, scissors: 1, thread: 1})
+      painting = Craft.new('painting', {canvas: 1, paint_brush: 2, paints: 5})
+      event = Event.new("Carla's Craft Connection", [knitting, painting, sewing], [hector, toni, tony])
+
+      expect(event.crafts_that_use('scissors')).to eq([knitting, sewing])
+      expect(event.crafts_that_use('fire')).to eq([])
     end
   end

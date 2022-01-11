@@ -39,9 +39,16 @@ class Event
   end
 
   def attendees_by_craft_interest
-    result = {}
+    attendes_interest = {}
+      @crafts.each do |craft|
+        attendes_interest[craft.name] = attendees_interested_in_certain_craft(craft)
+      end
+    attendes_interest
+  end
 
-require "pry"; binding.pry
+  def crafts_that_use(supply)
+    @crafts.find_all do |craft|
+      craft.supplies_required.has_key?(supply.to_sym)
     end
-
+  end
 end
