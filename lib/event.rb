@@ -21,5 +21,12 @@ class Event
   end
 
   def supply_list
+    list = @crafts.flat_map do |craft|
+      craft.supplies_required.keys
+    end
+    list.map do |name|
+      name.to_s
+    end.uniq
+    #binding.pry
   end
 end
