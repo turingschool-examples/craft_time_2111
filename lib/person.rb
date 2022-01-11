@@ -16,4 +16,7 @@ class Person
     end
   end
 
+  def can_build?(craft)
+    @supplies.include?(craft.supplies_required)
+  end
 end
