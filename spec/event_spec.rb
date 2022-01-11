@@ -20,4 +20,7 @@ RSpec.describe Event do
   it 'has array of crafts' do
     expect(@event.crafts).to eq([@craft])
   end
+
+  it 'has array of attendees' do
+    expect(@event.attendees).to eq([@person])
 end
