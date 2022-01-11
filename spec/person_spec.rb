@@ -7,4 +7,9 @@ RSpec.describe Person do
     person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
     expect(person).to be_instance_of(Person)
   end
+
+  it 'has a name' do
+    person = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    expect(person.name).to eq("Hector")
+  end
 end
