@@ -1,11 +1,11 @@
-equire './lib/event'
+require './lib/event'
 
-Rspec.describe Event do
+RSpec.describe Event do
   before(:each) do
     @event = Event.new("Carla's Craft Connection", [craft], [person])
   end
 
- xit 'exists' do
+ it 'exists' do
   expect(@event).to be_instance_of Event
  end
 
