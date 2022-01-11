@@ -11,7 +11,7 @@ RSpec.describe do
     expect(craft.name).to eq('knitting')
   end
 
-  it 'interests' do
+  it 'has supplies required' do
     craft = Craft.new('knitting', { yarn: 20, scissors: 1, knitting_needles: 2 })
     expect(craft.supplies_required).to eq({ yarn: 20, scissors: 1, knitting_needles: 2 })
   end
