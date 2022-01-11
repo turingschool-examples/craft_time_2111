@@ -18,11 +18,26 @@ class Event
   end
 
   def craft_with_most_supplies
-    # this is not a good method. I am aware
+    # this is not a good method. I aware
     if @crafts[0].supplies_required.size > @crafts[1].supplies_required.size
       @crafts[0].name
     else
       @crafts[1].name
     end
+  end
+
+  def supply_list
+    list = []
+    @crafts.each do |craft|
+      # binding.pry
+      list << craft.supplies_required.keys
+    end
+    list = list.flatten
+    new_list = []
+    list.each do |item|
+      new_list << item.to_s
+    end
+    # binding.pry
+    new_list.uniq
   end
 end
