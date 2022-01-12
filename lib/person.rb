@@ -1,3 +1,4 @@
+require 'set'
 class Person
   attr_reader :name, :interests, :supplies
   def initialize(attributes)
@@ -6,28 +7,21 @@ class Person
     @supplies = {}
   end
 
-  def add_supply(name, cost)
-    x = { name => cost}
-    if @supplies.has_key?(name)
-        @supplies.merge!(x) { |key, old, new| if key == key
-        old + new
-      end}
+  def add_supply(supply, quantity)
+    if @supplies.key?(supply)
+      @supplies[supply] += quantity
     else
-      create_hash(name, cost)
+      @supplies[supply] = quantity
     end
-    return @supplies
   end
 
-  def create_hash(name, cost)
-    @supplies[name] = cost
-  end
+  def can_build?(craft)
+       craft.supplies.all? do |item, quantity|
+      @supplies[item.to_s] >= quantity
+       end
+   end
+
+
 
 end
-
-
-
-
-
-# @supplies.merge(@supplies) { |key, old, new| if key == key
-#    old + new
-#  end }
+# ( @supplies[k] >= craft.supplies[k]  )
