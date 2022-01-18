@@ -81,7 +81,7 @@ RSpec.describe Event do
   end
 
   it 'can assign attendees to crafts randomly based on interests' do
-    hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
+    hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing', 'painting']})
     toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
     tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
     knitting = Craft.new('knitting', {yarn: 20, scissors: 1, knitting_needles: 2})
@@ -116,6 +116,9 @@ RSpec.describe Event do
       painting => [],
       sewing => [hector, toni]}
 
-    expect(event.assign_attendees_to_crafts).to eq(expected_1) # | eq(expected_2)
+    # expect(event.assign_attendees_to_crafts).to eq(expected_1) | eq(expected_2)
+    expect(event.assign_attendees_to_crafts[knitting]).to eq([tony]) | eq([toni, tony])
+    expect(event.assign_attendees_to_crafts[painting]).to eq([hector]) | eq([])
+    expect(event.assign_attendees_to_crafts[sewing]).to eq([hector]) | eq([toni]) | eq([hector, toni]) | eq([])
   end
 end
