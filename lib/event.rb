@@ -19,15 +19,6 @@ class Event
       craft.supplies_required.count
     end
     max_craft.name
-    # Initial code below: Refactored code above with better enumerable
-      # supplies_required = 0
-      # craft_with_most_supplies = nil
-      # @crafts.each do |craft|
-      #   if craft.supplies_required.count > supplies_required
-      #     (supplies_required = craft.supplies_required.count) && (craft_with_most_supplies = craft.name)
-      #   end
-      # end
-      # craft_with_most_supplies
   end
 
   def supply_list
@@ -61,34 +52,22 @@ class Event
     end
   end
 
+  def eligible_crafts_by_attendee
+    eligible_crafts_by_attendee = {}
+    @attendees.each do |attendee|
+      eligible_crafts_by_attendee[attendee] = @crafts.select do |craft|
+        !eligible_crafts_by_attendee.has_key?(attendee) && attendee.interests.include?(craft.name) && attendee.can_build?(craft)
+      end
+    end
+    eligible_crafts_by_attendee
+  end
+
   def assign_attendees_to_crafts
     assigned_attendees = {}
-    eligible_crafts_by_attendee = {}
-
-    @attendees.each do |attendee|
-      if !eligible_crafts_by_attendee.has_key?(attendee)
-        eligible_crafts_by_attendee[attendee] = []
-      end
-      @crafts.each do |craft|
-        if attendee.interests.include?(craft.name) && attendee.can_build?(craft)
-          eligible_crafts_by_attendee[attendee] << craft
-        end
-      end
-    end
-    @crafts.each do |craft|
-      if !assigned_attendees.has_key?(craft)
-        assigned_attendees[craft] = []
-      end
-    end
-
+    @crafts.each {|craft| assigned_attendees[craft] = [] if !assigned_attendees.has_key?(craft)}
     eligible_crafts_by_attendee.each_pair do |attendee, craft|
-      if craft.count == 1
-        assigned_attendees[craft[0]] << attendee
-      elsif craft.count > 1
-        assigned_attendees[craft.sample] << attendee
-      end
+      craft.count > 1 ? assigned_attendees[craft.sample] << attendee : assigned_attendees[craft[0]] << attendee
     end
     assigned_attendees
   end
-
 end
