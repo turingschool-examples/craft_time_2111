@@ -1,6 +1,4 @@
-require './lib/person'
-require './lib/craft'
-
+require_relative './spec_helper'
 
 RSpec.describe Person do
   it 'exists' do

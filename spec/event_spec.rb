@@ -1,6 +1,4 @@
-require './lib/event'
-require './lib/craft'
-require './lib/person'
+require_relative './spec_helper'
 
 RSpec.describe Event do
   it 'exists' do
@@ -82,7 +80,7 @@ RSpec.describe Event do
     expect(event.crafts_that_use("fire")).to eq([])
   end
 
-  xit 'can assign attendees to crafts randomly based on interests' do
+  it 'can assign attendees to crafts randomly based on interests' do
     hector = Person.new({name: 'Hector', interests: ['sewing', 'millinery', 'drawing']})
     toni = Person.new({name: 'Toni', interests: ['sewing', 'knitting']})
     tony = Person.new({name: 'Tony', interests: ['drawing', 'knitting']})
@@ -118,6 +116,6 @@ RSpec.describe Event do
       painting => [],
       sewing => [hector, toni]}
 
-    expect(event.assign_attendees_to_crafts).to eq(expected_1) | eq(expected_2)
+    expect(event.assign_attendees_to_crafts).to eq(expected_1) # | eq(expected_2)
   end
 end

@@ -1,4 +1,4 @@
-require './lib/craft'
+require_relative './spec_helper'
 
 RSpec.describe Craft do
   it 'exists' do
