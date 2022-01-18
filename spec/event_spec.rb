@@ -110,15 +110,18 @@ RSpec.describe Event do
       knitting => [tony],
       painting => [hector],
       sewing => [toni]}
-
     expected_2 = {
       knitting => [tony],
       painting => [],
       sewing => [hector, toni]}
 
-    # expect(event.assign_attendees_to_crafts).to eq(expected_1) | eq(expected_2)
     expect(event.assign_attendees_to_crafts[knitting]).to eq([tony]) | eq([toni, tony])
     expect(event.assign_attendees_to_crafts[painting]).to eq([hector]) | eq([])
     expect(event.assign_attendees_to_crafts[sewing]).to eq([hector]) | eq([toni]) | eq([hector, toni]) | eq([])
+
+    assigned_attendees = event.assign_attendees_to_crafts
+    if assigned_attendees[painting] == []
+      expect(assigned_attendees[sewing].include?(hector)).to eq true
+    end
   end
 end
