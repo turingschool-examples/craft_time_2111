@@ -5,7 +5,7 @@ class Person
   def initialize(info)
     @name = info[:name]
     @interests = info[:interests]
-    @supplies = {}
+    @supplies = Hash.new{0}
   end
 
   def add_supply(item, qty)
@@ -17,17 +17,22 @@ class Person
   end
 
   def can_build?(craft)
-    can_build = nil
-    supplies_required_strings = {}
-    craft.supplies_required.each_pair do |key, value|
-      supplies_required_strings[key.to_s] = value
+    supply_check = craft.supplies_required.map do |supply, qty|
+      @supplies[supply.to_s] >= qty
     end
-    supplies_required_strings.each_pair do |key, value|
-      @supplies.keys.include?(key) ? can_build = true : can_build = false
-      @supplies.each_pair do |k, v|
-        (k == key) && (v >= value) ? can_build = true : can_build = false
-      end
-    end
-    can_build
+    supply_check.all?
+    # Original solution below. Refactored above
+      # can_build = nil
+      # supplies_required_strings = {}
+      # craft.supplies_required.each_pair do |key, value|
+      #   supplies_required_strings[key.to_s] = value
+      # end
+      # supplies_required_strings.each_pair do |key, value|
+      #   @supplies.keys.include?(key) ? can_build = true : can_build = false
+      #   @supplies.each_pair do |k, v|
+      #     (k == key) && (v >= value) ? can_build = true : can_build = false
+      #   end
+      # end
+      # can_build
   end
 end
